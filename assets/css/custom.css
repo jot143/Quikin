@@ -1,0 +1,95 @@
+.google-icon {
+    width: 18px;
+    /* Set the desired width of the icon */
+    height: 18px;
+    /* Set the desired height of the icon */
+    background-image: url('../images/google.png');
+    /* Replace 'path-to-your-image.png' with the path to your PNG image */
+    background-size: contain;
+    /* Scale the image to cover the entire div */
+    background-position: center;
+    /* Center the image horizontally and vertically */
+}
+
+.custom-input-float input[type="text"], .custom-input-float input[type="email"],.custom-input-float input[type="number"], .custom-input-float input[type="password"],.custom-input-float select{
+    border-radius: 5px;
+    color: #a9a9a9;
+    font-size: 14px;
+    min-height: 50px;
+    box-shadow: none;
+}
+
+/* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
+
+.custom-input-float input:focus+label, .custom-input-float select:focus+label,
+.custom-input-float input:valid+label,.custom-input-float select:valid+label {
+    color:#151515;
+    top: -12px;
+    left: 10px;
+    background: #ffffff;
+    padding: 0px 5px 0px 5px;
+}
+
+.custom-input-float {
+    height: auto;
+    position: relative;
+}
+
+.custom-input-float label {
+   
+    color:#a9a9a9;
+    font-size: 14px;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    pointer-events: none;
+
+}
+.custom-input-float .select_label{
+   padding-left: 27px; 
+}
+
+.custom-input-float input[type="text"]:focus, .custom-input-float input[type="email"]:focus,.custom-input-float input[type="number"]:focus, .custom-input-float select:focus {
+    outline: none;
+}
+
+#preloader-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px; /* Adjust the height as needed */
+    width: 0;
+    background-color: #ff6700; /* Progress bar color */
+    z-index: 9999;
+    transition: width 0.2s;
+}
+
+
+/*styling for nav tabs in payouts page */
+
+.no-border-input{
+ border:none;   
+}
+/*
+hide for aop mockups
+*/
+.mockup2 .choose_color_menu,.mockup2 .image_dimentions_menu,.mockup2 .choose-backgrounds{
+    display:none;
+}

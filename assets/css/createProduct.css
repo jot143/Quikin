@@ -1,0 +1,511 @@
+
+
+
+
+#colourTab button {
+    height: 28px;
+    width: 65px;
+    margin-right: 5px;
+    text-align: center;
+    background: #faf9f7;
+    border-radius: 50px / 50px;
+    font-size: 12px;
+    color: #6e6e6e;
+}
+
+
+
+#editor .ql-container {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#editor .ql-editor {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#editor .ql-editor {
+    min-height: 90px;
+}
+
+/* .create_product_cards .card-img-top {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
+} */
+
+.create_product_cards .card-img-top {
+    max-width: 100%; 
+    /* max-width: 210px!important; */
+    height: auto;
+}
+
+
+/* Optional: Responsive adjustments for smaller devices */
+/* @media (max-width: 1476px) {
+    .create_product_cards .card-img-top {
+        max-height: 250px;
+    }
+} */
+
+
+@media (max-width: 768px) {
+    .create_product_cards .card-img-top {
+        max-height: 180px; /* Decrease max height for smaller devices */
+    }
+}
+
+@media (max-width: 576px) {
+    .create_product_cards .card-img-top {
+        max-height: 180px; /* Further decrease max height for very small screens */
+    }
+}
+
+
+.card {
+    border: none;
+    background-color: #FFF6EE;
+    /* max-width:210px !important;      */
+
+}
+
+.design-contents .card {
+    border: none;
+    /* background-color: white !important; */
+}
+
+.card {
+    border-radius: 5%;
+}
+
+
+
+
+
+.fullscreenModal {
+    font-family: sans-serif;
+}
+
+.fullscreenModal {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* .modal {
+    margin: 20px;
+} */
+
+.modal-body {
+    /* max-width: 100%;
+        height: 100vh; */
+    padding: 15px;
+}
+
+
+.card-img-top img-fluid {
+    height: 160px;
+    object-fit: cover;
+
+}
+
+.img-fluid {
+    border-radius: 7%;
+}
+
+.card-text {
+    font-size: 16px;
+    /* font-weight: 400; */
+    /* font-family: "Amazon Ember Display"; */
+    /* line-height: 19.15px; */
+}
+
+
+/* box shadow end */
+
+
+.card:hover {
+    cursor: pointer;
+}
+
+.selected {
+    border: 1.2px solid orange;
+    border-radius: 15px;
+}
+
+
+
+.nav-link-for-tab.active {
+    color: #ff6700 !important;
+    box-shadow: none;
+}
+
+.nav-pills :is(.nav-link.active, .show>.nav-link) {
+    -webkit-box-shadow: none;
+
+}
+
+.nav-link-for-tab {
+    color: #bbb2b2;
+    font-size: 17px;
+    font-weight:600 !important;
+    background-color: transparent !important;
+    font-family: "Amazon Ember Display Lt";
+}
+
+.nav-link-for-tab:hover {
+    color: #333233;
+}
+
+input[type="file"] {
+    color: transparent;
+}
+
+.btn-upload-image {
+    font-weight: 500;
+    color: #ff6700;
+    border: 1px solid #ff6700;
+    border-radius: 10px;
+}
+
+.colors-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.btn-colors {
+    padding: 3px;
+    margin: 3px !important;
+    border: 1px solid #6f7070;
+    border-radius: 5px
+}
+
+.btn-custom {
+    width: 27px;
+    height: 27px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.qikink_btn_icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ff6700;
+    background-color: #ff6700;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+.qikink_btn {
+    background-color: #ff6700;
+}
+
+.qikink_btn:hover {
+    background-color: #ff6700;
+}
+
+.Continue {
+    background-color: #ff6700;
+    color: white;
+    width: 10rem !important;
+
+    opacity: 0.4;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.saveAsProducts {
+    width: 180px;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: #ff6700;
+    border: 1px solid #4f4d4d;
+    outline: none !important;
+}
+
+.upload-desgin-category {
+    color: #555657;
+}
+
+
+
+.myDropzoneSectionOne,
+.myDropzoneSectionTwo {
+    border: 1px solid #ff6700;
+    border-style: dashed;
+    border-radius: 5%;
+    background-color: rgba(255, 103, 0, 0.05);
+} 
+
+#myDropzoneOne .dz-message,
+#myDropzoneTwo .dz-message { 
+    font-size: 13px;
+    color: #8a8887;
+    text-align: center;
+}
+
+#myDropzoneOne:hover .dz-message,
+#myDropzoneTwo:hover .dz-message {
+    color: #000;
+}
+
+.ql-editor.ql-blank::before {
+    font-family: "amazon ember display rg", sans-serif;
+    color: #9e9e9e;
+    font-style: normal;
+    font-size: 13px;
+}
+
+
+/* For Style Edit Product page  */
+#editProduct {
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* For Modal Close Button */
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-header .btn-close {
+    background-color: #c5c2c2;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+.modal-header .btn-close:hover {
+    background-color: #fa8a22;
+}
+
+#search_design {
+    outline: none;
+    /* Remove the default outline */
+}
+
+#search_design:focus {
+    outline: none;
+    /* Remove the blue outline on focus */
+    box-shadow: none;
+    /* Remove the box shadow, if any */
+}
+
+/* 
+.light_colors,
+.dark_colors {
+    background-color: rgba(255, 103, 0, 0.05); 
+} */
+
+
+
+
+
+
+
+.swal2-html-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.crate-product-loader {
+    height: 15px;
+    aspect-ratio: 4;
+    display: grid;
+}
+
+.crate-product-loader:before,
+.crate-product-loader:after {
+    content: "";
+    grid-area: 1/1;
+    --_g: no-repeat radial-gradient(farthest-side, #FF6700 94%, #0000);
+    background:
+        var(--_g) left,
+        var(--_g) right;
+    background-size: 25% 100%;
+    animation: l34 1s infinite;
+    transform: translate(var(--d, 0)) rotate(0);
+}
+
+.crate-product-loader:after {
+    --d: 37.5%;
+    animation-delay: .5s;
+}
+
+@keyframes l34 {
+
+    50%,
+    100% {
+        transform: translate(var(--d, 0)) rotate(.5turn)
+    }
+}
+
+/* CSS Loaders End */
+
+
+
+/* For Set Width to a default colors dropdown */
+.select2-container .select2-dropdown {
+    max-width: 180px;
+    width: auto !important;
+
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-selection {
+    overflow: hidden;
+}
+
+
+
+/* For Product Tags */
+.tags-container .tag {
+    display: inline-block;
+    background-color: #EDEBEB;
+    color: #6e6e6e;
+    padding: 3px 8px;
+    margin: 5px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+
+.tags-container .tag .remove {
+    margin-left: 8px;
+    margin-top: 2px;
+    font-size: 17px;
+    cursor: pointer;
+    color: black;
+}
+
+/* ---------------- */
+
+
+
+div.viewItemSelect img {
+    border: none !important;
+
+}
+
+#myModal {
+    overflow: hidden;
+}
+
+.viewItemSelect {
+    padding: 10px 0 10px 0 !important;
+}
+
+.viewSelected img.img-responsive {
+    border: 1px solid #e5743b !important;
+}
+
+.scFullSize .card {
+    box-shadow: none;
+}
+
+.swiper-slide {
+    max-height: 135px !important;
+}
+
+#width,
+#height,
+#design_angle {
+    border-bottom: 1px solid #c5c9c7 !important;
+    border-radius: 0px;
+}
+
+.size-button {
+    height: 40px !important;
+}
+
+.size-buttons .mb-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+.size-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 15px;
+}
+
+
+.size-button.selected {
+    border: none !important;
+}
+
+.size-button.selected {
+    background-color: #f2782c;
+    color: white;
+}
+
+
+.input-price-per-size {
+    width: 52px;
+    padding: 4px;
+    margin-left: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+
+#design_and_product_tab .nav-link p {
+    color: #838485 !important;
+    font-size: 15px;
+}
+
+/* Active tab color */
+#design_and_product_tab .nav-link.active p {
+    color: #f2782c !important;
+    font-size: 15px;
+
+}
+
+.ql-editor {
+    line-height: 2;
+}
+
+.mockup_design_starts {
+    background-color: #ffffff;
+}
+
+.image_dimentions_menu input {
+    background-color: transparent;
+}
+
+.image_dimentions_menu {
+    margin-left: 10px;
+}
+
+
+
+
+/* For View Size Chart Modal */
+
+.enable-size-chart:not(:checked) {
+    border-color: gray;
+}
+

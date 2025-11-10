@@ -1,0 +1,209 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 15-Mar-2025, 10:15:12 am
+    Author     : samuel
+*/
+
+    .in_inches {
+        color: #757573
+    }
+
+    .smart-guide {
+        border-color: #FF0000;
+    }
+
+    /* Title styling */
+    .swal2-title {
+        font-size: 18px !important; /* Increase the font size slightly */
+        color: #FF6700 !important; /* Retain the orange color */
+        text-align: center !important; /* Center the title */
+        margin: 0 0 10px 0 !important; /* Add margin below to space it out from the content */
+        padding: 0 !important; /* Remove unnecessary padding */
+        font-weight: 600 !important; /* Make the title bold */
+    }
+
+    /* Content container styling */
+    .swal2-html-container {
+        font-size: 14px !important; /* Increase font size for readability */
+        line-height: 1.6 !important; /* Increase line height for better readability */
+        margin: 0 15px !important; /* Add margin to the sides to avoid text touching edges */
+        text-align: left !important; /* Align the text to the left for better readability */
+        color: #333 !important; /* Darker color for text to enhance readability */
+    }
+
+    /* Hide icon (if needed) */
+    .swal2-icon {
+        display: none !important; /* Hide the icon completely */
+    }
+
+
+    /* Button styling */
+    .swal2-confirm, .swal2-cancel {
+        font-size: 14px !important; /* Adjust button text size */
+        padding: 10px 20px !important; /* Add padding to buttons */
+        border-radius: 5px !important; /* Round the corners of buttons */
+        text-transform: uppercase !important; /* Capitalize the button text */
+        transition: background-color 0.3s ease !important; /* Add a smooth hover effect */
+    }
+
+    /* Confirm button */
+    .swal2-confirm {
+        background-color: #FF6700 !important; /* Orange background */
+        color: #fff !important; /* White text */
+        border: none !important; /* Remove border */
+    }
+
+    /* Cancel button */
+    .swal2-cancel {
+        background-color: #f0f0f0 !important; /* Light gray background */
+        color: #333 !important; /* Dark text */
+        border: none !important; /* Remove border */
+    }
+
+    /* Hover effects */
+    .swal2-confirm:hover {
+        background-color: #e65c00 !important; /* Darken the confirm button on hover */
+    }
+
+    .swal2-cancel:hover {
+        background-color: #d1d1d1 !important; /* Darken the cancel button on hover */
+    }
+
+    /* Close button styling */
+    .swal2-close {
+        background-color: transparent !important; /* Transparent background */
+        color: #FF6700 !important; /* Orange color for the close icon */
+        font-size: 22px !important; /* Increase size of close button */
+        padding: 5px !important; /* Add padding around the close button */
+        border: none !important; /* Remove border */
+    }
+
+    /* Optional: Add a box shadow to the modal for a better effect */
+    .swal2-popup {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Add subtle shadow */
+        border-radius: 10px !important; /* Round the corners of the popup */
+    }
+
+
+
+    .swal2-actions {
+        display: flex !important;               /* Use flexbox for alignment */
+        flex-wrap: nowrap !important;            /* Prevent wrapping of buttons */
+        align-content: center !important;       /* Vertically align content in the center */
+        justify-content: center !important;     /* Horizontally center the buttons */
+        align-items: center !important;         /* Vertically center the buttons */
+        margin-top: 10px !important;            /* Add margin to the top */
+        padding: 5px 8px !important;          /* Add padding to the buttons */
+        font-size:13px !important;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel{
+        padding:8px !important;
+        font-size:12px !important;
+        text-transform: none !important; /* Prevent automatic capitalization */
+
+    }
+    .swal-title{
+        padding: 0 !important;
+    }
+
+
+
+ 
+
+    div.viewItemSelect img {
+        border: none !important;
+    }
+
+    #myModal {
+        overflow: hidden;
+    }
+
+    .viewItemSelect {
+        padding: 10px 0 10px 0 !important;
+    }
+
+    .viewSelected img.img-responsive {
+        border: 1px solid #e5743b !important;
+    }
+
+    .scFullSize .card {
+        box-shadow: none;
+    }
+
+    .swiper-slide {
+        max-height: 135px !important;
+    }
+
+    #width,
+    #height,
+    #design_angle {
+        border-bottom: 1px solid #c5c9c7 !important;
+        border-radius: 0px;
+    }
+
+    .popover {
+        font-size: 12px !important;
+        min-width: 200px !important;
+        max-width: 230px !important;
+    }
+
+    #price,
+    #width,
+    #height,
+    #dpi,
+    #print_quality,
+    #design_angle {
+        background-color: #f8f8f8;
+    }
+
+    @media (min-width: 500px) and (max-width: 1200px) {
+        .mockup_design_right {
+            padding: 10px !important;
+        }
+    }
+
+
+
+    .fpd-panel-position {
+        display: flex;
+        align-items: center;
+        /* Aligns items vertically */
+        justify-content: space-around;
+        /* Distributes items evenly */
+        gap: 10px;
+        /* Adds spacing between items */
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+
+    .align-icon,
+    .fpd-tooltip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        /* Ensures no extra spacing from margins */
+    }
+
+    .fpd-tooltip img,
+    .fpd-tooltip object {
+        display: block;
+        /* Ensures the image/object does not have extra space */
+    }
+
+    .qikink-icon-color {
+        color: #FF6700 !important;
+        font-size: 23px;
+    }
+
+    .design-note {
+        text-indent: -15px;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+    }

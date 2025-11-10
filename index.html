@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="content-type" content="text/html; charset=utf-8" />
+    <title>Qikink - Choose Collections</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">Qikink<span class="logo-accent">></span></div>
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            name="search"
+            class="search-input"
+            placeholder="Search products..."
+          />
+          <button class="search-button">Go</button>
+        </div>
+        <div class="header-actions">
+          <span class="user-icon">👤</span>
+          <button class="continue-button">Continue</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+      <button class="back-button"><span class="back-icon">←</span> Back</button>
+      <div class="step-indicators">
+        <div class="step active">
+          <div class="step-icon">⊞</div>
+          <span class="step-text">Choose Collections</span>
+        </div>
+        <div class="step">
+          <div class="step-icon">👕</div>
+          <span class="step-text">Select Products</span>
+        </div>
+        <div class="step">
+          <div class="step-icon">○</div>
+          <span class="step-text">Create Product</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div id="product-container" class="product-grid"></div>
+      </div>
+    </main>
+
+    <script type="module" src="app/index.js"></script>
+  </body>
+</html>

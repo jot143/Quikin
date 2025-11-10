@@ -1,0 +1,847 @@
+/*
+Template Name: Velzon - Admin & Dashboard Template
+Author: Themesbrand
+Website: https://themesbrand.com/
+Contact: support@themesbrand.com
+File: Custom Css File
+*/
+
+
+/* Container style */
+.swiper-container {
+    height: 100%;
+    /* Adjust height to show two images initially */
+    overflow: hidden;
+}
+
+.ri-arrow-up-s-line,
+.ri-arrow-down-s-line {
+    font-size: 30px;
+}
+
+
+
+.swiper-slide {
+    height: auto;
+    max-height: 120px;
+    max-width: 120px;
+    text-align: center;
+}
+
+.swiper-content {
+    height: 100%;
+    /* border: 2px solid rgb(136, 135, 135);
+    border-radius: 7px; */
+}
+
+.swiper-slide img {
+
+    margin: 5px;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+/* Custom pagination buttons */
+.custom-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.custom-pagination button {
+    background: transparent !important;
+    background-color: transparent !important;
+    /* Bootstrap primary color */
+    border: 2px solid #0056b3;
+    /* Darker blue border */
+    color: #fff;
+    /* White text color */
+    border-radius: 50%;
+    /* Circular button */
+    font-size: 24px;
+    /* Larger font size for the icon */
+    width: 50px;
+    /* Fixed width */
+    height: 50px;
+    /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* Pointer cursor */
+    margin: 0 10px;
+    /* Spacing between buttons */
+
+}
+
+.custom-pagination button:hover {
+    background: #0056b3;
+    /* Darker blue on hover */
+    border-color: #004494;
+    /* Even darker blue border on hover */
+}
+
+.center-align {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.prev-button,
+.next-button {
+    width: 100%;
+    border: none;
+    height: 32px;
+    background: transparent;
+}
+/* 
+.swiper-slide {
+    display: block !important;
+    text-align: center;
+} */
+
+.swiper-slide {
+    display: flex;
+    justify-content: center; /* Center content within each slide */
+    align-items: center; /* Vertically center content */
+    flex-direction: column; /* Align items in a column if needed */
+}
+
+
+.img-responsive {}
+
+
+
+.text-pos {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+@media screen and (max-width:768px) {
+    .colors button {
+        height: 26px !important;
+        width: 26px !important;
+    }
+
+    .fpd-element-toolbar-smart {
+        display: none;
+
+    }
+
+    .fpd-element-toolbar-smart {
+        display: none !important;
+    }
+
+    .fpd-main-wrapper {
+        height: auto !important;
+    }
+
+    .swiper-container {
+        min-height: 100px;
+        height: 120px;
+    }
+
+    .swiper-container {
+        display: flex;
+        justify-content: center; /* Center the swiper */
+        align-items: center; /* Vertically center if necessary */
+    }
+    
+    .prev-button,
+    .next-button {
+        display: none;
+    }
+
+    .px0 {
+        padding-left: 0px;
+    }
+
+    .design_options {
+        box-shadow: none;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+}
+
+
+
+.custom-select option {
+    font-size: 16px !important;
+}
+
+.custom-select::selection {
+    font-size: 16px !important;
+}
+
+.show-color {
+    height: 94px;
+    padding: 0px 0px;
+}
+
+
+.header-col {
+    display: flex;
+}
+
+.full-height-child {
+    height: 100%;
+}
+
+.full-width-child {
+    width: 100%;
+}
+
+.scFullSize {
+    background-color: #fffced;
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+
+
+}
+
+.addDesignButton {
+    background-color: #FF6700;
+}
+
+/* .design-row {
+    padding-bottom: 8px;
+    padding-top: 8px;
+} */
+
+.design-row .d-grid {
+    padding-top: 15px;
+}
+
+.design-title {
+    padding-left: 0px;
+}
+
+.btn-block {
+    height: 41px;
+    background-color: #FF6700;
+    font-size: 14px;
+}
+
+.align-icons-div label {
+    font-size: 25px;
+    padding: 0px 6px;
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .align-icons-div label {
+        font-size: 25px;
+        padding: 0px 4px;
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .align-icons-div label {
+        font-size: 25px;
+        padding: 0px 4px;
+
+    }
+}
+
+.dpi_div label {
+    color: #00AC47;
+}
+
+.page-logo {
+    padding: 10px;
+}
+
+.title-header {
+    background: transparent;
+    border: none;
+}
+
+.footer-container {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}
+
+.set-imgcenter {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 6px -3px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(#fffced, #fffdf4);
+    box-shadow: 0px 0px 3px 1px;
+    cursor: pointer;
+}
+
+.fpd-views-wrapper {
+    display: none !important;
+}
+
+.fpd-views-wrapper .fpd-views-selection .fpd-item {
+    width: 160px !important;
+    height: 150px !important;
+}
+
+.fpd-main-wrapper {
+
+    background: white !important;
+}
+
+.img-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the div while maintaining aspect ratio */
+}
+
+.row.full-height-child {
+    height: 100vh;
+    /* Adjusts the height of the row to fill the viewport height */
+}
+
+.col-md-3.full-width-child {
+    height: 25%;
+    /* Adjust as needed, or consider using flexbox for responsive heights */
+}
+
+.img-maxset {
+    max-width: 152px;
+    max-height: 152px;
+}
+
+.fpd-mainbar,
+.fpd-actions-container,
+.color-picker {
+    display: none;
+}
+
+/* bootstrap for slider  */
+.carousel-inner.vertical {
+    height: 100%;
+    /* Ensure a specific height */
+}
+
+.carousel-inner.vertical>.item {
+    -webkit-transition: .6s ease-in-out top;
+    -o-transition: .6s ease-in-out top;
+    transition: .6s ease-in-out top;
+}
+
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+    .carousel-inner.vertical>.item {
+        -webkit-transition: -webkit-transform .6s ease-in-out;
+        -o-transition: -o-transform .6s ease-in-out;
+        transition: transform .6s ease-in-out;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        perspective: 1000;
+    }
+
+    .carousel-inner.vertical>.item.next,
+    .carousel-inner.vertical>.item.active.right {
+        -webkit-transform: translate3d(0, 33.33%, 0);
+        transform: translate3d(0, 33.33%, 0);
+        top: 0;
+    }
+
+    .carousel-inner.vertical>.item.prev,
+    .carousel-inner.vertical>.item.active.left {
+        -webkit-transform: translate3d(0, -33.33%, 0);
+        transform: translate3d(0, -33.33%, 0);
+        top: 0;
+    }
+
+    .carousel-inner.vertical>.item.next.left,
+    .carousel-inner.vertical>.item.prev.right,
+    .carousel-inner.vertical>.item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        top: 0;
+    }
+}
+
+.carousel-inner.vertical>.active {
+    top: 0;
+}
+
+.carousel-inner.vertical>.next,
+.carousel-inner.vertical>.prev {
+    top: 0;
+    height: 100%;
+    width: auto;
+}
+
+.carousel-inner.vertical>.next {
+    left: 0;
+    top: 33.33%;
+    right: 0;
+}
+
+.carousel-inner.vertical>.prev {
+    left: 0;
+    top: -33.33%;
+    right: 0;
+}
+
+.carousel-inner.vertical>.next.left,
+.carousel-inner.vertical>.prev.right {
+    top: 0;
+}
+
+.carousel-inner.vertical>.active.left {
+    left: 0;
+    top: -33.33%;
+    right: 0;
+}
+
+.carousel-inner.vertical>.active.right {
+    left: 0;
+    top: 33.33%;
+    right: 0;
+}
+
+#carousel-pager .carousel-control.left,
+#carousel-pager .carousel-control.right {
+    width: 100%;
+}
+
+#carousel-pager .carousel-control.left {
+    bottom: initial;
+}
+
+#carousel-pager .carousel-control.right {
+    top: initial;
+}
+
+/* ------------------- */
+.card-body {
+    width: 100%;
+    color: #242323;
+
+}
+/* ------------------- */
+
+.design_options {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-right: 10px;
+}
+
+
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Adjust padding as needed */
+    border: 1px solid rgb(229, 116, 59);
+    background-color: white;
+    /* Background color of the select */
+    color: rgb(68, 212, 128);
+    cursor: pointer;
+
+
+}
+
+.custom-select {
+    max-width: 100%;
+    /* Adjusts the select width for responsiveness */
+    width: auto;
+    /* Allows the select box to resize based on its content */
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    overflow: hidden;
+    /* Hides the overflow text */
+    text-overflow: ellipsis;
+    /* Adds ellipsis to overflowing text */
+    font-size:13px;
+    margin-left:5px;
+}
+
+
+
+
+.form-control {
+    height: 35px !important;
+    font-size: 14px !important;
+}
+
+.btn-add-design {
+    position: relative;
+    bottom: 7px;
+    height: 35px !important;
+}
+
+.input-group .form-control {
+    border: 1px solid #f58942;
+    height: 42px !important;
+}
+
+.input-group .custom-select {
+    border: 1px solid #f58942;
+    height: 42px !important;
+}
+
+.input-group-text {
+    font-size: 14px !important;
+}
+
+
+select::after {
+    position: absolute;
+    pointer-events: none;
+}
+
+
+input[type="radio"] {
+    width: 1em;
+    height: 1em;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    border: 1px solid #2f2f30;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: rgb(229, 116, 59);
+    border-color: rgb(229, 116, 59);
+    border: 1px solid rgb(229, 116, 59);
+    outline: 1px;
+
+}
+
+.color-button {
+    width: 26px;
+    height: 26px;
+    margin: 5px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* .size-button {
+
+    width: 35px;
+    height: 28px;
+    margin: 5px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 11px;
+    max-width: 60px; 
+
+} */
+
+
+.size-button, .size-button-applyall {
+    width: auto;      
+    min-width:40px; 
+    height: 28px;
+    white-space: nowrap; 
+    margin: 5px;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 11px;
+    white-space: nowrap;
+    color: black;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.size-button.selected {
+    background-color: #f2782c;
+    color: white;
+}
+
+
+.form-check {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .input-group-text {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .form-control,
+    .custom-select {
+        font-size: 14px;
+        padding: 5px 10px;
+        height: 42px !important;
+    }
+
+    .form-mockup {
+        margin-top: 20px;
+
+    }
+
+
+    .design_options {
+        box-shadow: none;
+
+    }
+}
+
+
+
+
+
+
+.viewItemSelect {
+    padding: 10px 0px 10px 10px;
+    cursor: pointer;
+}
+
+#center-align-icon object {
+    pointer-events: none;
+}
+
+#center-align-icon {
+    outline: none;
+    /* Removes the outline when the button is focused */
+    border: none;
+    /* Removes the border */
+    background: transparent;
+    /* Removes default button background */
+    cursor: pointer;
+    /* Shows a pointer cursor on hover */
+    padding: 5px;
+    /* Removes any default padding */
+}
+
+.pcr-button {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.color-picker-tab {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border: 2px solid #FF6700;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* .place_order {
+    background-color: #13bf75;
+}
+
+.place_order:hover {
+    background-color: #026b3e;
+} */
+
+.fpd-element-toolbar-smart {
+    display: none !important;
+}
+
+
+.color-button {
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.color-button-white {
+    border: 0.3px solid #bdbbbb !important;
+}
+
+
+
+
+.plain_order_check:not(:checked) {
+    border-color: gray;
+}
+
+
+
+.form-switch .form-check-input:checked {
+    background-color: #FF6700;
+}
+
+
+
+.mockup_design_left label,
+.plain_order_menu label,
+.mockup_design_right label,
+.choose-background label,
+.available_sizes_menu label,
+.choose_color_menu label {
+    font-size: 14px;
+}
+
+
+
+.design_options {
+    max-height: 630px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.design_options::-webkit-scrollbar {
+    width: 5px;
+}
+
+.design_options::-webkit-scrollbar-thumb {
+    background-color: #c9c6c5;
+    /* Color of the scrollbar thumb */
+    border-radius: 5px;
+}
+
+
+@media (min-width: 1200px) and (max-width: 1310px) {
+    .add_design_menu {
+        width:190px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .add_design_menu {
+        display: none !important;
+    }
+}
+
+
+
+
+.info-icon i {
+    font-size: 1.2rem;
+    color: #3d3d3d;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.info-icon i:hover {
+    color: #FF6700;
+}
+
+
+
+
+/* For Modal Close Button */
+.modal-header .btn-close {
+    background-color: #c5c2c2; 
+    border: none; 
+    border-radius: 50%; 
+    width: 30px;
+    height: 30px; 
+    padding: 5px; 
+}
+
+.modal-header .btn-close:hover {
+    background-color: #fa8a22; /* Slightly darker on hover */
+}
+
+
+
+.mockup_price_popup {
+    background-color: red;
+    padding: 0;
+    margin: 0;
+    width: 300px !important;
+}
+
+.mockup_price_popup .text-end {
+    font-size: 12px !important;
+}
+
+strong {
+    font-size: 12px !important;
+}
+
+/* Increase the width of the popover */
+.popover {
+    min-width: 210px;
+    max-width: 250px;
+    width: 210px;
+}
+
+.popover .arrow {
+    left: calc(50% - 10px);
+}
+
+.popover-body {
+    padding: 8px;
+    font-size:11px;
+}
+
+/* // Quantity Button Styles //  */
+.input-step {
+    display: flex;
+    align-items: center;
+}
+
+.input-step input {
+    width: 30px;
+    text-align: center;
+    margin: 0 4px;
+    height: 20px;
+    font-size: 15px;
+    line-height: 14px;
+}
+
+
+
+.input-step button {
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 4px;
+    height: 20px;
+}
+
+
+.input-step button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+
+.tooltip {
+    background-color: black !important;
+    color: white;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+} 

@@ -1,0 +1,89 @@
+
+/*# sourceMappingURL=custom.min.css.map */
+
+body{
+    font-family: amazon ember display Rg;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-family: amazon ember display Bd !important;
+    font-weight:700;
+    
+}
+h2{
+    font-size:24px;
+}
+
+h3{
+    font-size:20px;
+}
+
+
+
+
+.title-header{
+    padding:7px 0px 12px 0px;
+}
+.ui-jqconfirm {
+    bottom: 150px !important;
+}
+.ui-jqconfirm .fm-button{
+    margin-top: 10px !important;
+}
+#gbox_jqGrid,
+#gview_jqGrid,
+#jqGrid_toppager,
+.ui-jqgrid-hdiv,
+.ui-jqgrid-bdiv,
+.ui-jqgrid-htable,
+#jqGrid,
+#jqGridPager {
+    width: 100% !important; 
+    box-sizing: border-box; 
+}
+
+.ui-jqgrid-bdiv {
+    min-height: 200px;
+    max-height: 500px;
+    /* Adjust the value as needed */
+}
+
+@media (max-width: 768px) {
+    .ui-jqgrid-bdiv {
+        max-height: 300px;
+        /* Adjust for smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .ui-jqgrid-bdiv {
+        max-height: 500px;
+        /* Adjust for larger screens */
+    }
+}
+
+.ui-jqgrid .ui-jqgrid-labels th div {
+    height: 45px !important;
+}
+.select2-container .select2-dropdown {
+    z-index: 9999;
+    width:300px!important;
+    /* You can adjust this value as needed */
+}
+.select2-selection__rendered {
+    line-height: 35px !important;
+}
+.select2-container .select2-selection--single {
+    height: 39px !important;
+}
+.select2-selection__arrow {
+    height: 38px !important;
+}
+.form-mockup label{
+    color:#151515;
+    font-size:13px;
+    font-weight:400;
+}
+.design-title{
+    padding-left:13px;
+    
+}
