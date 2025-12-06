@@ -1,54 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);
-@font-face {
-    font-family: 'amazon ember display rg';
-    src: url('../Ember_display/AmazonEmberDisplay_Md.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'amazon ember display he';
-    src: url('../Ember_display/AmazonEmberDisplay_He.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'amazon ember display lt';
-    src: url('../Ember_display/AmazonEmberDisplay_Lt.ttf') format('truetype');
-}
-@font-face {
-    font-family: hkgrotesk;
-    src: url(../fonts/hkgrotesk-light.eot);
-    src: local("hkgrotesk light"), url(../fonts/hkgrotesk-light.woff) format("woff");
-    font-weight: 300
-}
-
-@font-face {
-    font-family: hkgrotesk;
-    src: url(../fonts/hkgrotesk-regular.eot);
-    src: local("hkgrotesk regular"), url(../fonts/hkgrotesk-regular.woff) format("woff");
-    font-weight: 400
-}
-
-@font-face {
-    font-family: hkgrotesk;
-    src: url(../fonts/hkgrotesk-medium.eot);
-    src: local("hkgrotesk medium"), url(../fonts/hkgrotesk-medium.woff) format("woff");
-    font-weight: 500
-}
-
-@font-face {
-    font-family: hkgrotesk;
-    src: url(../fonts/hkgrotesk-semibold.eot);
-    src: local("hkgrotesk semibold"), url(../fonts/hkgrotesk-semibold.woff) format("woff");
-    font-weight: 600
-}
-
-@font-face {
-    font-family: hkgrotesk;
-    src: url(../fonts/hkgrotesk-bold.eot);
-    src: local("hkgrotesk bold"), url(../fonts/hkgrotesk-bold.woff) format("woff");
-    font-weight: 700
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
     --vz-vertical-menu-bg: #fff;
     --vz-vertical-menu-item-color: #6d7080;
@@ -663,29 +614,6 @@
         box-shadow: none
     }
 }
-
-[data-layout=horizontal] .page-content {
-    padding: calc(45px + 1.5rem) calc(1.5rem / 2) 60px calc(1.5rem / 2)
-}
-
-@media (min-width:1024.1px) {
-    [data-layout=horizontal] .page-content {
-        margin-top: 70px
-    }
-}
-
-@media (max-width:1024.1px) {
-    [data-layout=horizontal] .page-content {
-        padding: calc(45px + 1.5rem * 1.8) calc(1.5rem / 2) 60px calc(1.5rem / 2)
-    }
-}
-
-@media (min-width:1024.1px) {
-    [data-layout=horizontal][data-layout-width=boxed] .page-content {
-        min-height: calc(100vh - 130px)
-    }
-}
-
 @media (min-width:768px) {
     [data-layout=vertical]:is([data-sidebar-size=sm], [data-sidebar-size=sm-hover]) #page-topbar {
         left: 70px
@@ -827,16 +755,6 @@
 .main-content {
     -webkit-transition: all .1s ease-out;
     transition: all .1s ease-out
-}
-
-@media (min-width:768px) {
-    .main-content {
-        margin-left: 250px
-    }
-}
-
-.page-content {
-    padding: calc(70px + 1.5rem) calc(1.5rem * .5) 60px calc(1.5rem * .5)
 }
 
 .navbar-menu {
@@ -2007,9 +1925,6 @@
 }
 
 @media (min-width:1440px) {
-    [data-layout=semibox] .page-content {
-        padding: calc(70px + 1.5rem * 2) calc(1.5rem * .5) 60px calc(1.5rem * .5)
-    }
 
     [data-layout=semibox] .navbar-menu {
         margin: 25px;
@@ -5295,7 +5210,7 @@ html {
 
 :is(.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6) {
     color: var(--vz-heading-color);
-    font-family: "amazon ember display rg", sans-serif
+    font-family: "Nunito", sans-serif;
 }
 
 a {
@@ -7162,11 +7077,6 @@ button {
     font-weight: 500
 }
 
-.nav-pills :is(.nav-link.active, .show>.nav-link) {
-    -webkit-box-shadow: var(--vz-box-shadow);
-    box-shadow: var(--vz-box-shadow)
-}
-
 .nav-tabs-custom {
     border-bottom: 1px solid var(--vz-gray-300)
 }
@@ -8269,6 +8179,8 @@ button {
 
 .pagination-separated .page-item .page-link {
     margin-left: .35rem;
+    height: 38px;
+    width: 38px;
     border-radius: .25rem
 }
 
@@ -8287,6 +8199,8 @@ button {
 }
 
 .page-item.active .page-link {
+    color: #fff;
+    background-color: #fa8a22;
     -webkit-box-shadow: var(--vz-box-shadow);
     box-shadow: var(--vz-box-shadow)
 }

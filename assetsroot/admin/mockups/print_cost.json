@@ -1,0 +1,479 @@
+{
+  "1": {
+      "Front": {
+          "price_per_inch": 0.75,
+          "min_price": 100
+      },
+      "Back": {
+          "price_per_inch": 0.75,
+          "min_price": 100
+      },
+      "LeftShoulder": {
+          "price_per_inch": 0.75,
+          "min_price": 60
+      },
+      "RightShoulder": {
+          "price_per_inch": 0.75,
+          "min_price": 60
+      },
+      "LeftPocket": {
+          "price_per_inch": 0.75,
+          "min_price": 60
+      },
+      "RightPocket": {
+          "price_per_inch": 0.75,
+          "min_price": 60
+      },
+      "Custom": {
+          "price_per_inch": 0.75,
+          "min_price": 60
+      },
+      "AOP": {
+          "price_per_inch": 0.75,
+          "min_price": 60
+      }
+  },
+  "2": {
+      "Front": {
+          "price_per_inch": 0,
+          "min_price": 0
+      },
+      "Back": {
+         "price_per_inch": 0,
+          "min_price": 0
+      },
+      "LeftShoulder": {
+          "price_per_inch": 0,
+          "min_price": 0
+      },
+      "RightShoulder": {
+        "price_per_inch": 0,
+          "min_price": 0
+      },
+      "LeftPocket": {
+         "price_per_inch": 0,
+          "min_price": 0
+      },
+      "RightPocket": {
+          "price_per_inch": 0,
+          "min_price": 0
+      },
+      "Custom": {
+          "price_per_inch": 1.5,
+          "min_price": 100
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "3": {
+      "Front": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "Back": {
+        "price_per_inch": 1,
+          "min_price": 100
+      },
+      "LeftShoulder": {
+         "price_per_inch": 1,
+          "min_price": 100
+      },
+      "RightShoulder": {
+           "price_per_inch": 1,
+          "min_price": 100
+      },
+      "LeftPocket": {
+         "price_per_inch": 1,
+          "min_price": 100
+      },
+      "RightPocket": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "Custom": {
+           "price_per_inch": 1,
+          "min_price": 0
+      },
+      "AOP": {
+         "price_per_inch": 1,
+          "min_price": 0
+      }
+  },
+  "5": {
+      "Front": {
+          "price_per_inch": 0,
+          "min_price": 0
+      },
+      "Back": {
+       "price_per_inch": 0,
+          "min_price": 0
+      },
+      "LeftShoulder": {
+        "price_per_inch": 0,
+          "min_price": 0
+      },
+      "RightShoulder": {
+        "price_per_inch": 0,
+          "min_price": 0
+      },
+      "LeftPocket": {
+         "price_per_inch": 0,
+          "min_price": 0
+      },
+      "RightPocket": {
+         "price_per_inch": 0,
+          "min_price": 0
+      },
+      "Custom": {
+        "price_per_inch": 0,
+          "min_price": 0
+      },
+      "AOP": {
+       "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "6": {
+      "Front": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "Back": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "LeftShoulder": {
+        "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightShoulder": {
+             "price_per_inch": 1,
+          "min_price": 80
+      },
+      "LeftPocket": {
+              "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightPocket": {
+             "price_per_inch": 1,
+          "min_price": 80
+      },
+      "Custom": {
+          "price_per_inch": 0,
+          "min_price": 0
+      },
+      "AOP": {
+           "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "7": {
+      "Front": {
+          "price_per_inch": 2.5,
+          "min_price": 100
+      },
+      "Back": {
+            "price_per_inch": 2.5,
+          "min_price": 100
+      },
+      "LeftShoulder": {
+           "price_per_inch": 2.5,
+          "min_price": 100
+      },
+      "RightShoulder": {
+           "price_per_inch": 2.5,
+          "min_price": 100
+      },
+      "LeftPocket": {
+         "price_per_inch": 2.5,
+          "min_price": 100
+      },
+      "RightPocket": {
+           "price_per_inch": 2.5,
+          "min_price": 100
+      },
+      "Custom": {
+            "price_per_inch": 0,
+          "min_price": 0
+      },
+      "AOP": {
+           "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "11": {
+      "Front": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "Back": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "LeftShoulder": {
+          "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightShoulder": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "LeftPocket": {
+        "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightPocket": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "Custom": {
+       "price_per_inch": 1,
+          "min_price": 80
+      },
+      "AOP": {
+        "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "12": {
+      "Front": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "Back": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "LeftShoulder": {
+          "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightShoulder": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "LeftPocket": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightPocket": {
+             "price_per_inch": 1,
+          "min_price": 60
+      },
+      "Custom": {
+          "price_per_inch": 0,
+          "min_price":0
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "13":{
+      "Front": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "Back": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "LeftShoulder": {
+          "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightShoulder": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "LeftPocket": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightPocket": {
+             "price_per_inch": 1,
+          "min_price": 60
+      },
+      "Custom": {
+          "price_per_inch": 0,
+          "min_price":0
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  
+  "14":{
+      "Front": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "Back": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "LeftShoulder": {
+          "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightShoulder": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "LeftPocket": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightPocket": {
+             "price_per_inch": 1,
+          "min_price": 60
+      },
+      "Custom": {
+          "price_per_inch": 0,
+          "min_price":0
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "15":{
+      "Front": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "Back": {
+         "price_per_inch": 1,
+          "min_price": 80
+      },
+      "LeftShoulder": {
+          "price_per_inch": 1,
+          "min_price": 80
+      },
+      "RightShoulder": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "LeftPocket": {
+        "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightPocket": {
+             "price_per_inch": 1,
+          "min_price": 60
+      },
+      "Custom": {
+          "price_per_inch": 0,
+          "min_price":0
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "17": {
+      "Front": {
+          "price_per_inch": 0.75,
+          "min_price": 80
+      },
+      "Back": {
+         "price_per_inch": 0.75,
+          "min_price": 80
+      },
+      "LeftShoulder": {
+          "price_per_inch": 0.75,
+          "min_price": 50
+      },
+      "RightShoulder": {
+           "price_per_inch": 0.75,
+          "min_price": 50
+      },
+      "LeftPocket": {
+         "price_per_inch": 0.75,
+          "min_price": 50
+      },
+      "RightPocket": {
+           "price_per_inch": 0.75,
+          "min_price": 50
+      },
+      "Custom": {
+          "price_per_inch": 0,
+          "min_price": 0
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "18": {
+      "Front": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "Back": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "LeftShoulder": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightShoulder": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "LeftPocket": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightPocket": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "Custom": {
+          "price_per_inch":0,
+          "min_price": 0
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  },
+  "19": {
+      "Front": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "Back": {
+          "price_per_inch": 1,
+          "min_price": 100
+      },
+      "LeftShoulder": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightShoulder": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "LeftPocket": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "RightPocket": {
+          "price_per_inch": 1,
+          "min_price": 60
+      },
+      "Custom": {
+          "price_per_inch":0,
+          "min_price": 0
+      },
+      "AOP": {
+          "price_per_inch": 0,
+          "min_price": 0
+      }
+  }
+}

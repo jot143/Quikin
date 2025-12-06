@@ -1,60 +1,2362 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="content-type" content="text/html; charset=utf-8" />
-    <title>Qikink - Choose Collections</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="header-content">
-        <div class="logo">Qikink<span class="logo-accent">></span></div>
-        <div class="search-container">
-          <input
-            type="text"
-            id="search-input"
-            name="search"
-            class="search-input"
-            placeholder="Search products..."
-          />
-          <button class="search-button">Go</button>
-        </div>
-        <div class="header-actions">
-          <span class="user-icon">👤</span>
-          <button class="continue-button">Continue</button>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="content-type" content="text/html; charset=utf-8">
+  <title>Qikink - Choose Collections</title>
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/logo.ico">
+  <!-- Bootstrap CSS File -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <!-- RemixIcons CSS File -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Boxicons CSS File -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+  <!-- Swiper Bundle CSS File -->
+  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+  <!-- Nunito Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <!-- jsvectormap css -->
+  <link href="/assets/css/jsvectormap.min.css" rel="stylesheet" type="text/css">
+  <!-- Icons Css -->
+  <!-- <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Mockup CSS File -->
+  <link href="/assets/css/mockup.css" rel="stylesheet" type="text/css">
+  <!-- Design Modal CSS File -->
+  <link rel="stylesheet" href="/assets/css/designs-modal.css">
+  <!-- Dropzone css -->
+  <link rel="stylesheet" href="/assets/css/dropzone.css">
+  <link rel="stylesheet" href="/assets/css/FancyProductDesigner-all.min.css">
+  <link rel="stylesheet" href="/assets/css/classic.min.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="/assets/css/custom.min.css">
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="/assets/css/sweetalert2.min.css">
+  <!-- Font Awesome CSS (latest version) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet" href="/assets/css/jquery-ui.css">
+  <!-- Select2Min CSS -->
+  <link href="/assets/css/select2.min.css" rel="stylesheet">
+  <!-- Create Product -->
+  <link rel="stylesheet" href="/assets/css/createProduct.css">
+  <!-- Quill Snow CSS File -->
+  <link rel="stylesheet" href="/assets/css/quill.snow.css">
+  <!-- App Css-->
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css">
+  <!-- Style CSS File -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="main-content p-0">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div id="spa" class="p-5 pt-1">
+          <!-- Header -->
+          <nav class="navbar navbar-light p-0">
+            <div class="container-fluid ps-0 pe-0 d-flex justify-content-between align-items-center">
+              <!-- Logo -->
+              <a class="navbar-brand" href="#" style="margin-left:-8px;">
+                <img src="/assets/images/qikink-logo.svg" alt="" width="100" height="50"
+                  class="d-inline-block align-text-top">
+              </a>
+              <!-- Centered Search Div -->
+              <div class="flex-grow-1 mx-3 d-flex align-items-center justify-content-center create-product-search-div"
+                style="max-width: 345px">
+                <input type="text" id="create-product-search" name="search" class="search-input form-control"
+                  placeholder="Search products...">
+                <button type="button" class="go-button btn qikink_btn ms-2" id="go-button">Go</button>
+              </div>
+              <!-- User Info -->
+              <div class="text-end user-info-name" id="user_name">
+                <span>
+                  <i class="ri-user-3-line me-1"></i>Navdeepsingh0511@gmail.com
+                </span>
+              </div>
+            </div>
+          </nav>
+          <div class="products-content-wrap">
+            <div class="p-0 container-fluid tab-switch-container">
+              <div class="row mt-2 d-flex flex-wrap bg-white rounded-3 change-background">
+                <!-- Back Button on the left -->
+                <div class="col-2 col-md-2 col-lg-1 col-xl-1 d-flex align-items-center justify-content-start">
+                  <button class="border-0 d-flex align-items-center back-button" id="back-button">
+                    <i class="ri-arrow-left-s-line qikink_btn_back_icon"></i>
+                    <span class="categories-card-title">Back</span>
+                  </button>
+                </div>
+                <!-- Tabs Centered -->
+                <div
+                  class="tabs col-6 col-md-7 col-lg-10 col-xl-9 d-flex justify-content-center create-product-title-tabs">
+                  <ul class="nav nav-pills m-1 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="category-nav-item nav-item align-items-center d-flex justify-content-between me-3"
+                      role="presentation">
+                      <span class="qikink_btn_icon">
+                        <i class="bx bx-grid-alt"></i>
+                      </span>
+                      <p class="nav-link nav-link-for-tab active mt-3 disabled" id="categories_tab"
+                        data-bs-toggle="pill" data-bs-target="#pills-home" role="tab" aria-controls="pills-home"
+                        aria-selected="true">
+                        Choose Collections
+                      </p>
+                    </li>
+                    <li class="category-nav-item nav-item align-items-center d-flex justify-content-between me-3"
+                      role="presentation">
+                      <span class="qikink_btn_icon">
+                        <i class="bx bxs-t-shirt"></i>
+                      </span>
+                      <p class="nav-link nav-link-for-tab mt-3 disabled" id="create_product_tab" data-bs-toggle="pill"
+                        data-bs-target="#create_product" role="tab" aria-controls="create_product" aria-selected="false"
+                        tabindex="-1">
+                        Select Products
+                      </p>
+                    </li>
+                    <li class="category-nav-item nav-item align-items-center d-flex justify-content-between me-3"
+                      role="presentation">
+                      <span class="qikink_btn_icon">
+                        <i class="bx bxs-palette"></i>
+                      </span>
+                      <p class="nav-link nav-link-for-tab mt-3 disabled" id="mockup_design_tab" data-bs-toggle="pill"
+                        data-bs-target="#mockup_design" role="tab" aria-controls="mockup_design" aria-selected="false"
+                        tabindex="-1">
+                        Create Product
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Continue Button on the right -->
+                <div class="p-0 col-2 col-md-3 col-lg-1 col-xl-2 d-flex align-items-center justify-content-end mt-1">
+                  <button type="button" class="btn qikink_btn continue-button" onclick="Continue()" id="Continue"
+                    aria-label="Continue" data-currenttab="selectCategory" data-current-page="">
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content container-fluid p-0" id="pills-tabContent">
+              <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="categories_tab">
+                <div class="selectCategoryContainer pt-5 px-4" id="selectCategoryContainer">
+                  <div class="container">
+                    <div class="g-4 px-md-5 row category_cards">
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="1" data-title="T-Shirts"
+                          data-image="T-shirts.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/T-shirts.PNG"
+                            class="card-img-top img-fluid" alt="T-Shirts" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              T-Shirts
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="2" data-title="New Products"
+                          data-image="NewProducts.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/NewProducts.PNG"
+                            class="card-img-top img-fluid" alt="New Products" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              New Products
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="3" data-title="Hoodies &amp; Jackets"
+                          data-image="Hoodies.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Hoodies.PNG"
+                            class="card-img-top img-fluid" alt="Hoodies &amp; Jackets" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Hoodies &amp; Jackets
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="4" data-title="AOP Apparel"
+                          data-image="AOP.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/AOP.PNG"
+                            class="card-img-top img-fluid" alt="AOP Apparel" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              AOP Apparel
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="5" data-title="Bottomwear"
+                          data-image="Bottomwear.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Bottomwear.PNG"
+                            class="card-img-top img-fluid" alt="Bottomwear" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Bottomwear
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="6" data-title="Kids Clothing"
+                          data-image="KidsClothing.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/KidsClothing.PNG"
+                            class="card-img-top img-fluid" alt="Kids Clothing" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Kids Clothing
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="7" data-title="Headwear"
+                          data-image="Headwear.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Headwear.PNG"
+                            class="card-img-top img-fluid" alt="Headwear" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Headwear
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="8" data-title="Drinkware"
+                          data-image="Drink-ware.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Drink-ware.PNG"
+                            class="card-img-top img-fluid" alt="Drinkware" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Drinkware
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="9" data-title="Accessories"
+                          data-image="Accessories.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Accessories.PNG"
+                            class="card-img-top img-fluid" alt="Accessories" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Accessories
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="10" data-title="Home &amp; Living"
+                          data-image="Home-and-livng.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Home-and-livng.PNG"
+                            class="card-img-top img-fluid" alt="Home &amp; Living" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Home &amp; Living
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="11" data-title="Pet-Wear"
+                          data-image="Pet-Products.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Pet-Products.PNG"
+                            class="card-img-top img-fluid" alt="Pet-Wear" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Pet-Wear
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-2 categories">
+                        <div class="card" onclick="selectCategory(this)" data-id="12" data-title="Bags"
+                          data-image="Bags.PNG">
+                          <img src="https://products.qikink.com/assets/client/products/categories/Bags.PNG"
+                            class="card-img-top img-fluid" alt="Bags" loading="lazy">
+                          <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <p class="card-text text-center categories-card-title">
+                              Bags
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="create_product" role="tabpanel" aria-labelledby="create_product_tab">
+                <div class="allProductsByCategoryContainer pt-5 px-4">
+                  <div class="container">
+                    <div class="g-4 px-md-5 mt-0 row all_products_by_category"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="mockup_design" role="tabpanel" aria-labelledby="mockup_design_tab">
+                <div class="mcontainer" style="width:100% !important;">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="cards" style="padding: 0px 1px; ">
+                        <div class="card-body mt-1">
+                          <div class="clear"></div>
+                          <div class="row mt-2 mockup_design_starts p-2">
+                            <input type="hidden" name="store_type" id="store_type" value="woocommerce">
+                            <!-- For Mockup title & Design Guideline -->
+                            <div class="row pe-0 mt-2">
+                              <div
+                                class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-start text-white mockup_name ">
+                                <p class="pt-2 pb-3 mockup_name_h3"
+                                  style="text-align: left !important; color: #292929; font-size: large;font-weight: 700;">
+                                  Unisex Standard Crew T-Shirt | US21
+                                </p>
+                              </div>
+                              <div
+                                class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end pe-0 default_color_div"
+                                style="display: flex !important">
+                                <span class="pt-2" id="default-color-label"
+                                  style="min-width:150px; font-size:14px; font-weight: 600;">
+                                  Default Color
+                                  <i class="fas fa-circle-info ms-1" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    aria-label="This color will be used as the primary display image in the store."
+                                    data-bs-original-title="This color will be used as the primary display image in the store."></i>
+                                </span>
+                                <select class="form-select select-color select2-hidden-accessible"
+                                  id="defaultColorDropdown" aria-label="Color Options" onchange="changeColor(this)"
+                                  data-select2-id="defaultColorDropdown" tabindex="-1" aria-hidden="true">
+                                  <option value="1" selected="" data-select2-id="141">White</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-1 placementsDiv p-0 ">
+                              <div class="center-align" style="margin-top: 12px;margin-bottom: 8px;">
+                                <button class="prev-button">
+                                  <i class="ri-arrow-up-s-line"></i>
+                                </button>
+                              </div>
+                              <div
+                                class="swiper-container mySwiper position-relative swiper-initialized swiper-vertical swiper-pointer-events swiper-backface-hidden">
+                                <div class="swiper-wrapper" id="swiperWrapper" aria-live="polite"
+                                  style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                                  <div class="swiper-slide viewItemSelect viewSelected" data-viewindex="0">
+                                    <div class="swiper-content" style="margin-bottom:10px;">
+                                      <img src="./Create Product _ Qikink_files/1727070031Round neck Front Temp.png"
+                                        class="img-responsive" height="81" width="81"
+                                        style="background-color: rgb(255, 255, 255);">
+                                      <div class="center-al-carousel text-pos">
+                                        Front
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="swiper-slide viewItemSelect" data-viewindex="1">
+                                    <div class="swiper-content" style="margin-bottom:10px;">
+                                      <img src="./Create Product _ Qikink_files/1727070062Round neck Back Temp.png"
+                                        class="img-responsive" height="81" width="81"
+                                        style="background-color: rgb(255, 255, 255);">
+                                      <div class="center-al-carousel text-pos">
+                                        Back
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="swiper-slide viewItemSelect" data-viewindex="2">
+                                    <div class="swiper-content" style="margin-bottom:10px;">
+                                      <img src="./Create Product _ Qikink_files/1727065701Pocket base temp.png"
+                                        class="img-responsive" height="81" width="81"
+                                        style="background-color: rgb(255, 255, 255);">
+                                      <div class="center-al-carousel text-pos">
+                                        Left Pocket
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="swiper-slide viewItemSelect" data-viewindex="3">
+                                    <div class="swiper-content" style="margin-bottom:10px;">
+                                      <img src="./Create Product _ Qikink_files/1727065701Pocket base temp.png"
+                                        class="img-responsive" height="81" width="81"
+                                        style="background-color: rgb(255, 255, 255);">
+                                      <div class="center-al-carousel text-pos">
+                                        Right Pocket
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="swiper-slide viewItemSelect" data-viewindex="4">
+                                    <div class="swiper-content" style="margin-bottom:10px;">
+                                      <img src="./Create Product _ Qikink_files/1724844302asda.png"
+                                        class="img-responsive" height="81" width="81"
+                                        style="background-color: rgb(255, 255, 255);">
+                                      <div class="center-al-carousel text-pos">
+                                        Left Sleeve
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="swiper-slide viewItemSelect" data-viewindex="5">
+                                    <div class="swiper-content" style="margin-bottom:10px;">
+                                      <img src="./Create Product _ Qikink_files/1724844294asdasd.png"
+                                        class="img-responsive" height="81" width="81"
+                                        style="background-color: rgb(255, 255, 255);">
+                                      <div class="center-al-carousel text-pos">
+                                        Right Sleeve
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                              </div>
+                              <div class="center-align" style="margin-top: 20px;">
+                                <button class="next-button">
+                                  <i class="ri-arrow-down-s-line"></i>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="col-md-5">
+                              <style type="text/css" id="fpd-custom-fonts"></style>
+                              <div id="clothing-designer"
+                                class="fpd-container  fpd-topbar fpd-tabs fpd-tabs-side fpd-top-actions-centered fpd-bottom-actions-centered fpd-views-inside-left fpd-smart-guide fpd-disable-touch-scrolling fpd-ui-theme-flat fpd-clearfix fpd-grid-columns-2 fpd-products-module-hidden fpd-device-desktop"
+                                style="width: 620px; height: auto;">
+                                <div class="fpd-mainbar fpd-clearfix">
+                                  <div class="fpd-navigation fpd-primary-bg-color">
+                                    <div data-module="products">
+                                      <span class="fpd-nav-icon fpd-icon-grid"></span>
+                                      <span class="fpd-label">Products</span>
+                                    </div>
+                                    <div data-module="images">
+                                      <span class="fpd-nav-icon fpd-icon-photo"></span>
+                                      <span class="fpd-label">Images</span>
+                                    </div>
+                                    <div data-module="text">
+                                      <span class="fpd-nav-icon fpd-icon-text-secondary"></span>
+                                      <span class="fpd-label">Text</span>
+                                    </div>
+                                    <div data-module="designs">
+                                      <span class="fpd-nav-icon fpd-icon-design-library"></span>
+                                      <span class="fpd-label">Designs</span>
+                                    </div>
+                                    <div data-module="manage-layers">
+                                      <span class="fpd-nav-icon fpd-icon-layers"></span>
+                                      <span class="fpd-label">Layers</span>
+                                    </div>
+                                  </div>
+                                  <div class="fpd-close-off-canvas">
+                                    <span class="fpd-icon-close"></span>
+                                  </div>
+                                </div>
+                                <div class="fpd-loader-wrapper" style="display: none;">
+                                  <div class="fpd-loader">
+                                    <div class="fpd-loader-circle"></div>
+                                    <span class="fpd-loader-text"
+                                      data-defaulttext="Initializing Product Designer">QikinkBackground
+                                      <br>24/24
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="fpd-main-wrapper" style="min-height: 796px;">
+                                  <div class="fpd-modal-lock fpd-unlocked fpd-animated">
+                                    <div class="fpd-toggle-lock">
+                                      <span class="fpd-icon-unlocked"></span>
+                                      <span class="fpd-icon-locked"></span>
+                                      <div>Unlock view</div>
+                                    </div>
+                                  </div>
+                                  <div class="fpd-element-tooltip" style="display: none; left: 310px; top: -412px;"
+                                    data-defaulttext="Move element in its containment!">
+                                    Move element in its containment!
+                                  </div>
+                                  <div class="fpd-snap-line-h" style="display: none;"></div>
+                                  <div class="fpd-snap-line-v" style="display: none;"></div>
+                                  <div class="fpd-product-stage" style="width:620px;height: 796px;">
+                                    <div class="fpd-view-stage"
+                                      style="width: 620px; height: 796px; position: relative; user-select: none;">
+                                      <canvas class="lower-canvas" width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+                                      <canvas class="upper-canvas " width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: manipulation; user-select: none; cursor: pointer;"></canvas>
+                                    </div>
+                                    <div class="fpd-view-stage fpd-hidden"
+                                      style="width: 620px; height: 796px; position: relative; user-select: none;">
+                                      <canvas class="lower-canvas" width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+                                      <canvas class="upper-canvas " width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: manipulation; user-select: none;"></canvas>
+                                    </div>
+                                    <div class="fpd-view-stage fpd-hidden"
+                                      style="width: 620px; height: 796px; position: relative; user-select: none;">
+                                      <canvas class="lower-canvas" width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+                                      <canvas class="upper-canvas " width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: manipulation; user-select: none;"></canvas>
+                                    </div>
+                                    <div class="fpd-view-stage fpd-hidden"
+                                      style="width: 620px; height: 796px; position: relative; user-select: none;">
+                                      <canvas class="lower-canvas" width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+                                      <canvas class="upper-canvas " width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: manipulation; user-select: none;"></canvas>
+                                    </div>
+                                    <div class="fpd-view-stage fpd-hidden"
+                                      style="width: 620px; height: 796px; position: relative; user-select: none;">
+                                      <canvas class="lower-canvas" width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+                                      <canvas class="upper-canvas " width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: manipulation; user-select: none;"></canvas>
+                                    </div>
+                                    <div class="fpd-view-stage fpd-hidden"
+                                      style="width: 620px; height: 796px; position: relative; user-select: none;">
+                                      <canvas class="lower-canvas" width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: none; user-select: none;"></canvas>
+                                      <canvas class="upper-canvas " width="620" height="796"
+                                        style="position: absolute; width: 620px; height: 796px; left: 0px; top: 0px; touch-action: manipulation; user-select: none;"></canvas>
+                                    </div>
+                                  </div>
+                                  <div class="fpd-views-wrapper" style="display: block;">
+                                    <span class="fpd-view-prev fpd-disabled">
+                                      <span class="fpd-icon-forward"></span>
+                                    </span>
+                                    <div class="fpd-views-selection">
+                                      <div class="fpd-shadow-1 fpd-item fpd-tooltip tooltipstered fpd-view-active">
+                                        <picture
+                                          style="background-image: url(https://products.qikink.com/assets/admin/uploads/mockup-6/1727070031Round%20neck%20Front%20Temp.png);">
+                                        </picture>
+                                      </div>
+                                      <div class="fpd-shadow-1 fpd-item fpd-tooltip tooltipstered">
+                                        <picture
+                                          style="background-image: url(https://products.qikink.com/assets/admin/uploads/mockup-6/1727070062Round%20neck%20Back%20Temp.png);">
+                                        </picture>
+                                      </div>
+                                      <div class="fpd-shadow-1 fpd-item fpd-tooltip tooltipstered">
+                                        <picture
+                                          style="background-image: url(https://products.qikink.com/assets/admin/uploads/mockup-6/1727065701Pocket%20base%20temp.png);">
+                                        </picture>
+                                      </div>
+                                      <div class="fpd-shadow-1 fpd-item fpd-tooltip tooltipstered">
+                                        <picture
+                                          style="background-image: url(https://products.qikink.com/assets/admin/uploads/mockup-6/1727065701Pocket%20base%20temp.png);">
+                                        </picture>
+                                      </div>
+                                      <div class="fpd-shadow-1 fpd-item fpd-tooltip tooltipstered">
+                                        <picture
+                                          style="background-image: url(https://products.qikink.com/assets/admin/uploads/mockup-6/1724844302asda.png);">
+                                        </picture>
+                                      </div>
+                                      <div class="fpd-shadow-1 fpd-item fpd-tooltip tooltipstered">
+                                        <picture
+                                          style="background-image: url(https://products.qikink.com/assets/admin/uploads/mockup-6/1724844294asdasd.png);">
+                                        </picture>
+                                      </div>
+                                    </div>
+                                    <span class="fpd-view-next">
+                                      <span class="fpd-icon-forward"></span>
+                                    </span>
+                                  </div>
+                                  <div class="fpd-actions-container">
+                                    <div class="fpd-actions-wrapper fpd-pos-top">
+                                      <div
+                                        class="fpd-action-btn fpd-tooltip fpd-sub-tooltip fpd-primary-text-color tooltipstered"
+                                        data-action="download" data-defaulttext="Download">
+                                        <span class="fpd-icon-cloud-download"></span>
+                                        <div class="fpd-modal-context fpd-modal-download">
+                                          <span data-value="jpeg">
+                                            <span class="fpd-icon-jpg"></span>
+                                          </span>
+                                          <span data-value="png">
+                                            <span class="fpd-icon-png"></span>
+                                          </span>
+                                          <span data-value="pdf">
+                                            <span class="fpd-icon-pdf"></span>
+                                          </span>
+                                          <span data-value="svg">
+                                            <span class="fpd-icon-svg"></span>
+                                          </span>
+                                          <div class="fpd-checkbox">
+                                            <input type="checkbox" id="fpd-action-download-single-view">
+                                            <label for="fpd-action-download-single-view"
+                                              data-defaulttext="Only export current showing view">
+                                              Only
+                                              export current showing
+                                              view
+                                            </label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="fpd-action-btn fpd-tooltip fpd-primary-text-color tooltipstered"
+                                        data-action="preview-lightbox" data-defaulttext="Preview">
+                                        <span class="fpd-icon-preview-lightbox"></span>
+                                      </div>
+                                    </div>
+                                    <div class="fpd-actions-wrapper fpd-pos-bottom">
+                                      <div class="fpd-action-btn fpd-tooltip fpd-primary-text-color tooltipstered"
+                                        data-action="undo" data-defaulttext="Undo">
+                                        <span class="fpd-icon-undo"></span>
+                                      </div>
+                                      <div
+                                        class="fpd-action-btn fpd-tooltip fpd-disabled fpd-primary-text-color tooltipstered"
+                                        data-action="redo" data-defaulttext="Redo">
+                                        <span class="fpd-icon-redo"></span>
+                                      </div>
+                                    </div>
+                                    <div class="fpd-actions-wrapper fpd-pos-smart"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="fpd-device-info">
+                                Sorry! But the product
+                                designer can not be displayed on your device. Please
+                                use a device with a larger screen!
+                              </div>
+                              <!-- Alignment Of the Design -->
+                              <div class="card-body design-align-icons d-none" style="margin-left:5.5%">
+                                <div class="row mt-3  design-row ">
+                                  <div
+                                    class="col-lg-10 col-xl-10 col-md-10 col-sm-10 col-xs-10 col-10 align-icons-div d-flex justify-content-center align-items-center">
+                                    <div class="fpd-panel-position fpd-panel-content fpd-icon-button-group fpd-active"
+                                      style="box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); padding: 10px 20px; border-radius: 30px;">
+                                      <label class="align-icon fpd-align-center-h fpd-tooltip tooltipstered"
+                                        data-param-name="originX" data-param-value="center" style="color: #FF6700">
+                                        <i class="ri-align-item-vertical-center-line"></i>
+                                      </label>
+                                      <label class="align-icon fpd-align-center-v fpd-tooltip tooltipstered"
+                                        data-param-name="originY" data-param-value="center" style="color: #FF6700">
+                                        <i class="ri-align-item-horizontal-center-line"></i>
+                                      </label>
+                                      <label class="align-icon fpd-flip-h fpd-tooltip tooltipstered"
+                                        style="font-size:20px; color: #FF6700">
+                                        <i class="fpd-icon-flip-horizontal"></i>
+                                      </label>
+                                      <label class="align-icon fpd-flip-v fpd-tooltip tooltipstered"
+                                        style="font-size:20px; color: #FF6700">
+                                        <i class="fpd-icon-flip-vertical"></i>
+                                      </label>
+                                      <button id="center-align-icon" type="button" class="fpd-tooltip tooltipstered"
+                                        data-defaulttext="Horizontally &amp; Vertical Center"
+                                        style="border:none; background-color:white;">
+                                        <img src="./Create Product _ Qikink_files/mockup-center-align.svg"
+                                          alt="Center Align Icon" width="25px" height="25px">
+                                      </button>
+                                      <button id="undo_zoom_percentage" type="button" class="fpd-tooltip tooltipstered"
+                                        style="border:none; background-color:white;">
+                                        <img src="./Create Product _ Qikink_files/undo_icon.svg" alt="Undo Icon"
+                                          width="25px" height="25px">
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 form-mockup rightsidecontainer mockup1">
+                              <div class="row">
+                                <div class="ps-2 card-body design_options" style="max-height:none;">
+                                  <!-- Design Title & Product Details Tab -->
+                                  <div class="justify-content-center align-center text-center m-1 ps-1">
+                                    <ul class="nav nav-tabs" id="design_and_product_tab" role="tablist">
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="user_design_tab" data-bs-toggle="tab"
+                                          data-bs-target="#user_design_content" type="button" role="tab"
+                                          aria-controls="user_design_content" aria-selected="true">
+                                          <p class="mb-0">Design</p>
+                                        </button>
+                                      </li>
+                                      <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="user_product_details_tab" data-bs-toggle="tab"
+                                          data-bs-target="#user_products_content" type="button" role="tab"
+                                          aria-controls="user_products_content" aria-selected="false" tabindex="-1">
+                                          <p class="mb-0">
+                                            Product Details
+                                          </p>
+                                        </button>
+                                      </li>
+                                      <div
+                                        class="col-4 col-sm-5 col-md-3 col-lg-4 col-xl-4 col-xxl-5 design_guidelines d-flex align-items-center bg-none p-0 justify-content-end pe-0  ms-auto d-none">
+                                        <button type="button" id="design_guidelines"
+                                          style="border:none; color: #FF6700; font-weight:500; font-size:13px; background-color:white !important"
+                                          class="align-center d-flex align-items-center rounded bg-light "
+                                          data-bs-toggle="modal" data-bs-target="#design_guidelines_modal">
+                                          Design Guidelines
+                                          <i class="ri-information-2-fill qikink-icon-color ms-2"></i>
+                                        </button>
+                                        <!-- For Show the Design Guideline Details in the Modal  -->
+                                        <div class="modal " id="design_guidelines_modal" tabindex="-1"
+                                          aria-labelledby="design_guidelines_modalLabel" aria-hidden="true">
+                                          <div class="modal-dialog modal-dialog-right modal-top-right">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h6 class="modal-title" id="design_guidelines_modalLabel"
+                                                  style="font-size: 16px; color: #FF6700; text-align: center; margin-bottom: 12px;">
+                                                  Design
+                                                  Guidelines
+                                                </h6>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                  aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body pt-1">
+                                                <div class="design-guideline"></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </ul>
+                                  </div>
+                                  <!-- Here We Seperate the Page for 2 Tabs for -->
+                                  <!-- Make Desgins & Add product Details -->
+                                  <div class="tab-content" id="design_and_product_tab_content">
+                                    <!-- Designs details Tab - This is For First Tab -->
+                                    <div class="tab-pane fade show active" id="user_design_content" role="tabpanel"
+                                      aria-labelledby="user_design_tab">
+                                      <!-- Hiddens inputs For Image Dimentions calculations on modify -->
+                                      <form method="post" name="design_values" id="design_values">
+                                        <!-- for Created product saved name in the server -->
+                                        <input type="hidden" id="saved_zip_file_name" name="saved_zip_file_name">
+                                        <input type="hidden" id="image_width_temp" name="image_width">
+                                        <input type="hidden" id="image_height_temp" name="image_height">
+                                        <input type="hidden" id="image_dpi_temp" name="image_dpi">
+                                        <input type="hidden" id="image_width_in_px_temp" name="image_width_in_px_temp">
+                                        <input type="hidden" id="image_height_in_px_temp"
+                                          name="image_height_in_px_temp">
+                                        <input type="hidden" id="image_width_in_inches" name="image_width_in_inches">
+                                        <input type="hidden" id="initial_scale_x" name="initial_scale_x">
+                                        <input type="hidden" id="initial_scale_y" name="initial_scale_y">
+                                        <div class="row">
+                                          <!-- left side  -->
+                                          <div
+                                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 mockup_design_left pe-0">
+                                            <!-- Plain Product Check-->
+                                            <div
+                                              class="row m-1 mt-3 aop_products_hide plain_order_check_div plain-option-row">
+                                              <div
+                                                class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 mt-2 design-row plain-product design-related d-flex justify-content-start">
+                                                <label for="plain_order_check" class="">
+                                                  Plain Product
+                                                </label>
+                                              </div>
+                                              <div
+                                                class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 mt-1 form-switch form-switch-danger d-flex justify-content-end">
+                                                <input class="form-check-input plain_order_check" type="checkbox"
+                                                  role="switch" id="plain_order_check"
+                                                  style="width: 3.5em; height: 1.8em;">
+                                              </div>
+                                            </div>
+                                            <!-- For View & Insert Size Chart - Shopify -->
+                                            <div class="row m-1 mt-3 sizechartrow">
+                                              <div
+                                                class="col-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 mt-2 design-row design-related d-flex justify-content-start p-0"
+                                                style="padding-left:11px !important;">
+                                                <label for="enable-size-chart" class="">
+                                                  Add Size Chart
+                                                </label>
+                                              </div>
+                                              <div
+                                                class="col-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 mt-1 form-switch form-switch-danger d-flex justify-content-end align-items-center">
+                                                <span type="button" class="sizeChartModal" data-bs-toggle="modal"
+                                                  data-bs-target="#sizeChartModal">
+                                                  <i class="ri-eye-fill me-5"
+                                                    style="color: #FF6700; font-size: 1.4rem; line-height: 1; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); border-radius: 1px; padding: 1px;"></i>
+                                                </span>
+                                                <input class="form-check-input enable-size-chart" type="checkbox"
+                                                  role="switch" id="enable-size-chart"
+                                                  style="width: 3.5em; height: 1.8em;">
+                                              </div>
+                                            </div>
+                                            <!-- Mockup Price-->
+                                            <div class="row m-1 mt-3 justify-content-between d-none">
+                                              <div
+                                                class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 mt-2 design-row design-related d-flex justify-content-start">
+                                                <label for="price" class="">Price</label>
+                                              </div>
+                                              <div
+                                                class="col-6 col-sm-3 col-md-6 col-lg-5 col-xl-7 col-xxl-5 design-row design-related d-flex align-items-center justify-content-end">
+                                                <!-- Input field with added margin to the right -->
+                                                <input type="text" class="form-control me-2" id="price" name="price"
+                                                  aria-describedby="price-label" placeholder="" value="" readonly=""
+                                                  style="border:0; text-align: right; min-width: 80px; max-width: 160px;">NaN</input>
+                                                <!-- Info icon with popover functionality -->
+                                                <span class="info-icon" type="button" data-bs-container="body"
+                                                  data-bs-toggle="popover" data-bs-placement="bottom"
+                                                  data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                                  <i class="ri-information-line"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <!-- Mockup Price-->
+                                            <div class="row m-1 mt-3 justify-content-between d-none">
+                                              <div
+                                                class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 mt-2 design-row design-related d-flex justify-content-start">
+                                                <label for="price" class="">Price</label>
+                                              </div>
+                                              <div
+                                                class="col-6 col-sm-3 col-md-6 col-lg-5 col-xl-7 col-xxl-5 design-row design-related d-flex align-items-center justify-content-end">
+                                                <!-- Input field with added margin to the right -->
+                                                <input type="text" class="form-control me-2" id="price" name="price"
+                                                  aria-describedby="price-label" placeholder="" value="" readonly=""
+                                                  style="border:0; text-align: right; min-width: 80px; max-width: 160px;">
+                                                <!-- Info icon with popover functionality -->
+                                                <span class="info-icon" type="button" data-bs-container="body"
+                                                  data-bs-toggle="popover" data-bs-placement="bottom"
+                                                  data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                                  <i class="ri-information-line"></i>
+                                                </span>
+                                              </div>
+                                            </div>
+                                            <!-- Printing Type Options -->
+                                            <div class="row design-row printing_options_menu design-related mt-2 mb-2">
+                                              <div
+                                                class="row design-row printing_options_menu design-related mt-2 mb-2">
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-2 ms-3">
+                                                  <label class="form-label">
+                                                    Printing Options
+                                                  </label>
+                                                </div>
+                                                <div
+                                                  class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 radioDiv d-flex">
+                                                  <div class="row">
+                                                    <div class="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-12 d-flex">
+                                                      <div class="form-check">
+                                                        <input type="radio" class="form-check-input printingOption"
+                                                          id="printingOption_0" name="printingOption" value="1"
+                                                          onchange="getPrintTypeVal(window.yourDesigner.currentViewIndex, 1)"
+                                                          checked="">
+                                                        <label class="form-check-label" for="printingOption_0">
+                                                          DTG Printing
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-12 d-flex">
+                                                      <div class="form-check">
+                                                        <input type="radio" class="form-check-input printingOption"
+                                                          id="printingOption_1" name="printingOption" value="3"
+                                                          onchange="getPrintTypeVal(window.yourDesigner.currentViewIndex, 3)">
+                                                        <label class="form-check-label"
+                                                          for="printingOption_1">Embroidery</label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-12 d-flex">
+                                                      <div class="form-check">
+                                                        <input type="radio" class="form-check-input printingOption"
+                                                          id="printingOption_9" name="printingOption" value="17"
+                                                          onchange="getPrintTypeVal(window.yourDesigner.currentViewIndex, 17)">
+                                                        <label class="form-check-label" for="printingOption_9">
+                                                          DTF Printing
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-6 col-md-12 col-lg-12 col-xl-12 d-flex">
+                                                      <div class="form-check">
+                                                        <input type="radio" class="form-check-input printingOption"
+                                                          id="printingOption_vinyl" name="printingOption"
+                                                          value="vinyl_printing">
+                                                        <label class="form-check-label" for="printingOption_vinyl">
+                                                          Vinyl Printing
+                                                        </label>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12 mb-2" id="vinyl_printing_options"
+                                                  style="display: none;">
+                                                  <div class="row">
+                                                    <div
+                                                      class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-none d-sm-block d-md-none d-lg-block d-xl-none d-xxl-none">
+                                                      <label class="form-label ms-3 mt-2" for="print_type_dropdown">
+                                                        Vinyl Printing Options
+                                                      </label>
+                                                    </div>
+                                                    <div
+                                                      class="col-12 col-sm-6 col-md-12 col-lg-6 col-xl-12 col-xxl-12">
+                                                      <select class="form-select custom-select ms-3"
+                                                        name="print_type_dropdown" id="print_type_dropdown"
+                                                        onchange="getPrintTypeVal(window.yourDesigner.currentViewIndex, this.value)">
+                                                        <option value="">
+                                                          Select Vinyl
+                                                        </option>
+                                                        <option class="printingOption" value="7">
+                                                          Glow-In-Dark
+                                                        </option>
+                                                        <option class="printingOption" value="12">
+                                                          Rainbow Vinyl
+                                                        </option>
+                                                        <option class="printingOption" value="13">
+                                                          Gold Vinyl
+                                                        </option>
+                                                        <option class="printingOption" value="14">
+                                                          Silver Vinyl
+                                                        </option>
+                                                        <option class="printingOption" value="15">
+                                                          Reflective Grey Vinyl
+                                                        </option>
+                                                        <option class="printingOption" value="18">
+                                                          Puff-Black
+                                                        </option>
+                                                        <option class="printingOption" value="19">
+                                                          Puff-Grey
+                                                        </option>
+                                                      </select>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <!-- For Add Your Designs in Mobile View -->
+                                            <div
+                                              class="row ms-2 d-block d-sm-none mt-2 justify-content-end mobile-add-design ">
+                                              <div class="form-group text-center col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                                                <div class="d-grid gap-2">
+                                                  <button type="button" class="btn btn-block add_your_desgin"
+                                                    style="background-color:#FF6700; color:white"
+                                                    onclick="getImageData(1)" data-bs-target=".bs-example-modal-xl">
+                                                    Add Your
+                                                    Design
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- center side  -->
+                                          <div class="col d-none d-xl-flex justify-content-center">
+                                            <div class="center-div"
+                                              style="width: 3px; margin-top:25px; height: 180px; background-color: #c5c9c7; border-radius:3px;">
+                                            </div>
+                                          </div>
+                                          <!-- right side  -->
+                                          <div
+                                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5 mt-1 justify-content-end mockup_design_right p-0">
+                                            <div
+                                              class="p-2 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex mt-3 mt-sm-0 add_design_menu justify-content-center">
+                                              <div class="form-group col-sm-6 col-md-12">
+                                                <button type="button" class="btn btn-block w-100 add_your_desgin"
+                                                  style="background-color:#FF6700; color:white"
+                                                  onclick="getImageData(1)" data-bs-target=".bs-example-modal-xl">
+                                                  Add Your Design
+                                                </button>
+                                              </div>
+                                            </div>
+                                            <div class="image_dimentions_menu d-none aop_products_hide ps-1 pe-1">
+                                              <div class="row mt-3 w-100 width_row">
+                                                <div
+                                                  class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-5 col-xxl-6 mt-2 justify-content-end">
+                                                  <label for="basiInput" class="form-label">Width</label>
+                                                </div>
+                                                <div class="col-8 col-md-6 col-sm-8 col-lg-6 col-xl-7 col-xxl-6 pe-0">
+                                                  <div class="input-group">
+                                                    <input type="text" class="form-control" id="width" name="width"
+                                                      aria-describedby="width-label" value=""
+                                                      style="border: none; text-align: right; ">
+                                                    <span class="in_inches"
+                                                      style="text-align: right; margin-top:10px;padding: .1rem .1rem !important;">In</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="row w-100 height_row">
+                                                <div
+                                                  class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-5 col-xxl-6 mt-2 justify-content-end">
+                                                  <label for="basiInput" class="form-label">Height</label>
+                                                </div>
+                                                <div class="col-8 col-md-6 col-sm-8 col-lg-6 col-xl-7 col-xxl-6 pe-0">
+                                                  <div class="input-group">
+                                                    <input type="text" class="form-control" id="height" name="height"
+                                                      aria-describedby="height-label" value=""
+                                                      style="border: none; text-align: right; ">
+                                                    <span class="in_inches"
+                                                      style="text-align: right; margin-top:10px;padding: .1rem .1rem !important;">In</span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="row w-100 d-flex">
+                                                <div
+                                                  class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-6 col-xxl-7 mt-2 justify-content-start">
+                                                  <label for="basiInput" class="form-label">
+                                                    Image
+                                                    DPI
+                                                  </label>
+                                                </div>
+                                                <div
+                                                  class="col-8 col-md-6 col-sm-8 col-lg-6 col-xl-6 col-xxl-5 justify-content-end">
+                                                  <input type="text" class="form-control ms-2" id="dpi" name="dpi"
+                                                    aria-describedby="dpi-label" placeholder="" value="" readonly=""
+                                                    style="border: none; text-align: right; padding: .1rem .1rem !important;">
+                                                </div>
+                                              </div>
+                                              <div class="row w-100">
+                                                <div class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-6 col-xxl-7 mt-2 ">
+                                                  <label for="print-quality-label" class="form-label">
+                                                    Design
+                                                    File
+                                                  </label>
+                                                </div>
+                                                <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-5 ">
+                                                  <input type="text" class="form-control no-border-input ms-2 mt-1"
+                                                    id="print_quality" name="print_quality"
+                                                    aria-describedby="width-label" placeholder="" value="Good"
+                                                    readonly=""
+                                                    style="border: none; text-align: right; padding: .1rem .1rem !important;">
+                                                </div>
+                                              </div>
+                                              <div class="row w-100">
+                                                <div class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-6 col-xxl-7 mt-2 ">
+                                                  <label for="design_angle" class="form-label">
+                                                    Desgin
+                                                    Angle
+                                                  </label>
+                                                </div>
+                                                <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-5 ">
+                                                  <input type="text" class="form-control no-border-input ms-2 mt-1"
+                                                    id="design_angle" name="design_angle" aria-describedby="width-label"
+                                                    placeholder="" value="0"
+                                                    style="border: none; text-align: right; padding: .1rem .1rem !important;">
+                                                </div>
+                                              </div>
+                                              <div class="row w-100 d-none">
+                                                <div class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-6 col-xxl-7 mt-2 ">
+                                                  <label for="zoom_percentage" class="form-label">
+                                                    Design
+                                                    Scale
+                                                  </label>
+                                                </div>
+                                                <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-5 ">
+                                                  <input type="text" readonly=""
+                                                    class="form-control no-border-input ms-2 mt-1" id="zoom_percentage"
+                                                    name="zoom_percentage" aria-describedby="width-label" placeholder=""
+                                                    value="0" style="border: none; text-align: right;">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- Bootstrap Modal for Size Chart -->
+                                        <div class="modal" id="sizeChartModal" tabindex="-1"
+                                          aria-labelledby="sizeChartModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog modal-md">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h6 class="modal-title" id="sizeChartModalLabel">
+                                                  Size Chart
+                                                </h6>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                  aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body text-center">
+                                                <img id="size_chart_image"
+                                                  src="./Create Product _ Qikink_files/1744980361sizechart.png"
+                                                  alt="Size Chart" class="img-fluid">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- Change The Background -->
+                                        <div
+                                          class="row m-2 pt-2 design-row choose-backgrounds d-flex aop_products_hide">
+                                          <div
+                                            class="col-12 col-sm-6 col-md-5 px-0 pt-1 ms-1 d-flex  justify-content-start">
+                                            <label for="dpi-label" class="form-label m-1">
+                                              Choose Background
+                                            </label>
+                                          </div>
+                                          <div
+                                            class="col-3 col-sm-2 col-md-2 align-icons-div px-0 d-flex justify-content-center">
+                                            <div class="form-group color-picker-tab">
+                                              <div class="pickr">
+                                                <button type="button" class="pcr-button" role="button"
+                                                  aria-label="toggle color picker dialog"
+                                                  style="--pcr-color: rgba(250, 247, 243, 1);"></button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="col-7 col-sm-3 col-md-4 align-icons-div justify-content-end">
+                                            <div class="form-group">
+                                              <input type="text" class="form-control" id="bcolor" name="bcolor"
+                                                aria-describedby="width-label" placeholder="# Color Code">
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- Available Sizes  -->
+                                        <div class="m-1 mt-4">
+                                          <div
+                                            class="mt-1 me-2 d-flex justify-content-between align-items-center available_sizes_menu">
+                                            <div class="col-sm-8 col-md-8 col-lg-4 col-12 px0 ms-1">
+                                              <label class="form-label ms-2">
+                                                Available Sizes
+                                              </label>
+                                            </div>
+                                            <span class="text-secondary selectAllSizes"
+                                              style="padding: 2px; font-size:14px; cursor: pointer;">
+                                              Select all
+                                            </span>
+                                          </div>
+                                          <div class="row mt-1">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 size-buttons ps-1 pe-0">
+                                              <div class="mb-3">
+                                                <!-- Button on top -->
+                                                <button class="size-button-applyall" type="button"
+                                                  style="min-width: 70px; min-height: 40px;" id="setPriceToAll"
+                                                  for="getPriceToAll">
+                                                  Apply to All
+                                                  <i class="bx bxs-select-multiple"></i>
+                                                </button>
+                                                <div style="position: relative; width: 70px;">
+                                                  <input type="text" id="getPriceToAll"
+                                                    style=" position: relative; min-width: 70px; height:28px; text-align:right; font-size:14px;"
+                                                    class="input-price-per-size mt-1">
+                                                  <span
+                                                    style="position: absolute; left: 10px; top: 55%; transform: translateY(-50%); font-size: 12px; color: #333;">₹</span>
+                                                </div>
+                                              </div>
+                                              <div class="mb-3 each-button dynamic-button">
+                                                <button class="size-button selected" type="button"
+                                                  style="min-width: 50px;" id="1" bg-size-color="" bg-size-id="1"
+                                                  data-input-id="1_input_price" data-bs-toggle="tooltip"
+                                                  data-bs-placement="bottom" data-bs-original-title="
+                                                  Product Price: ₹ 140.00&lt;br&gt;
+                                                  Printing Price: ₹ 0.00&lt;br&gt;
+                                                  Handling Price: ₹ 0.00&lt;br&gt;
+                                                  GST: ₹ 7.00&lt;br&gt;
+                                                  Total: ₹ 147.00
+                                                  " data-bs-html="true">
+                                                  S
+                                                  <p class="pb-1 basePricePerSize" data-price="140"
+                                                    data-shipping-price="63.75" data-producttax="5" data-handling="0"
+                                                    data-updated-price="147.00">
+                                                    ₹ 147.00
+                                                  </p>
+                                                </button>
+                                                <input type="text"
+                                                  style="font-size: 12px; text-align: center; min-width: 50px !important; width: 50px;"
+                                                  name="1_input_price" id="1_input_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹">
+                                                <input type="hidden" style="font-size:12px; text-align:center"
+                                                  name="1_input_price_base_price" id="1_input_price_base_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹" value="140">
+                                              </div>
+                                              <div class="mb-3 each-button dynamic-button">
+                                                <button class="size-button" type="button" style="min-width: 50px;"
+                                                  id="2" bg-size-color="" bg-size-id="2" data-input-id="2_input_price"
+                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                  data-bs-original-title="
+                                                  Product Price: ₹ 140.00&lt;br&gt;
+                                                  Printing Price: ₹ 0.00&lt;br&gt;
+                                                  Handling Price: ₹ 0.00&lt;br&gt;
+                                                  GST: ₹ 7.00&lt;br&gt;
+                                                  Total: ₹ 147.00
+                                                  " data-bs-html="true">
+                                                  M
+                                                  <p class="pb-1 basePricePerSize" data-price="140"
+                                                    data-shipping-price="63.75" data-producttax="5" data-handling="0"
+                                                    data-updated-price="147.00">
+                                                    ₹ 147.00
+                                                  </p>
+                                                </button>
+                                                <input type="text"
+                                                  style="font-size: 12px; text-align: center; min-width: 50px !important; width: 50px;"
+                                                  name="2_input_price" id="2_input_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹">
+                                                <input type="hidden" style="font-size:12px; text-align:center"
+                                                  name="2_input_price_base_price" id="2_input_price_base_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹" value="140">
+                                              </div>
+                                              <div class="mb-3 each-button dynamic-button">
+                                                <button class="size-button" type="button" style="min-width: 50px;"
+                                                  id="3" bg-size-color="" bg-size-id="3" data-input-id="3_input_price"
+                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                  data-bs-original-title="
+                                                  Product Price: ₹ 140.00&lt;br&gt;
+                                                  Printing Price: ₹ 0.00&lt;br&gt;
+                                                  Handling Price: ₹ 0.00&lt;br&gt;
+                                                  GST: ₹ 7.00&lt;br&gt;
+                                                  Total: ₹ 147.00
+                                                  " data-bs-html="true">
+                                                  L
+                                                  <p class="pb-1 basePricePerSize" data-price="140"
+                                                    data-shipping-price="63.75" data-producttax="5" data-handling="0"
+                                                    data-updated-price="147.00">
+                                                    ₹ 147.00
+                                                  </p>
+                                                </button>
+                                                <input type="text"
+                                                  style="font-size: 12px; text-align: center; min-width: 50px !important; width: 50px;"
+                                                  name="3_input_price" id="3_input_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹">
+                                                <input type="hidden" style="font-size:12px; text-align:center"
+                                                  name="3_input_price_base_price" id="3_input_price_base_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹" value="140">
+                                              </div>
+                                              <div class="mb-3 each-button dynamic-button">
+                                                <button class="size-button" type="button" style="min-width: 50px;"
+                                                  id="4" bg-size-color="" bg-size-id="4" data-input-id="4_input_price"
+                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                  data-bs-original-title="
+                                                  Product Price: ₹ 140.00&lt;br&gt;
+                                                  Printing Price: ₹ 0.00&lt;br&gt;
+                                                  Handling Price: ₹ 0.00&lt;br&gt;
+                                                  GST: ₹ 7.00&lt;br&gt;
+                                                  Total: ₹ 147.00
+                                                  " data-bs-html="true">
+                                                  XL
+                                                  <p class="pb-1 basePricePerSize" data-price="140"
+                                                    data-shipping-price="63.75" data-producttax="5" data-handling="0"
+                                                    data-updated-price="147.00">
+                                                    ₹ 147.00
+                                                  </p>
+                                                </button>
+                                                <input type="text"
+                                                  style="font-size: 12px; text-align: center; min-width: 50px !important; width: 50px;"
+                                                  name="4_input_price" id="4_input_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹">
+                                                <input type="hidden" style="font-size:12px; text-align:center"
+                                                  name="4_input_price_base_price" id="4_input_price_base_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹" value="140">
+                                              </div>
+                                              <div class="mb-3 each-button dynamic-button">
+                                                <button class="size-button" type="button" style="min-width: 50px;"
+                                                  id="6" bg-size-color="" bg-size-id="6" data-input-id="6_input_price"
+                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                  data-bs-original-title="
+                                                  Product Price: ₹ 140.00&lt;br&gt;
+                                                  Printing Price: ₹ 0.00&lt;br&gt;
+                                                  Handling Price: ₹ 0.00&lt;br&gt;
+                                                  GST: ₹ 7.00&lt;br&gt;
+                                                  Total: ₹ 147.00
+                                                  " data-bs-html="true">
+                                                  XXL
+                                                  <p class="pb-1 basePricePerSize" data-price="140"
+                                                    data-shipping-price="63.75" data-producttax="5" data-handling="0"
+                                                    data-updated-price="147.00">
+                                                    ₹ 147.00
+                                                  </p>
+                                                </button>
+                                                <input type="text"
+                                                  style="font-size: 12px; text-align: center; min-width: 50px !important; width: 50px;"
+                                                  name="6_input_price" id="6_input_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹">
+                                                <input type="hidden" style="font-size:12px; text-align:center"
+                                                  name="6_input_price_base_price" id="6_input_price_base_price"
+                                                  class="input-price-per-size mt-1" placeholder="₹" value="140">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- Product Colours-->
+                                        <div class="m-2 design-row choose_color_menu">
+                                          <div class="row m-1 d-flex justify-content-between align-items-center">
+                                            <div class="col-6 col-md-8 col-lg-6 px-0 ms-1 mt-1 text-start">
+                                              <label class="form-label">
+                                                Product
+                                                Colors
+                                              </label>
+                                            </div>
+                                            <div class="col-5 col-md-3 col-lg-5 px-0 ms-1 mt-1 text-end">
+                                              <span class="text-secondary selectAllColors"
+                                                style="padding: 2px; font-size:14px; cursor: pointer;">
+                                                Select
+                                                All
+                                              </span>
+                                            </div>
+                                          </div>
+                                          <div class="row mt-1">
+                                            <div class="col-sm-12 col-md-12 col-lg-12 col-md-9 align-icons-div pe-0">
+                                              <div class="col colors" id="colors-container">
+                                                <div class="col colors">
+                                                  <button type="button" bg-color="#ffffff" bg-color-id="1"
+                                                    bg-color-name="White"
+                                                    style="background-color: rgb(255, 255, 255); border: 1px solid rgb(242, 120, 44); border-radius: 50%; color: rgb(242, 120, 44); box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 3px; width: 28px; height: 28px;"
+                                                    class="color-button color-button-white" data-bs-toggle="tooltip"
+                                                    data-bs-placement="bottom" aria-label="White"
+                                                    data-bs-original-title="White"></button>
+                                                  <button type="button" bg-color="#000000" bg-color-id="2"
+                                                    bg-color-name="Black" style="background-color: #000000;"
+                                                    class="color-button " data-bs-toggle="tooltip"
+                                                    data-bs-placement="bottom" aria-label="Black"
+                                                    data-bs-original-title="Black"></button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </form>
+                                      <!-- Download Button for Download the mockup -->
+                                      <div class="row mt-1 design-row d-none">
+                                        <div class="col-sm-6 col-md-6 col-md-6 col-lg-6 px0">
+                                          <!-- For Single Color Design Download -->
+                                          <div class="d-grid gap-2">
+                                            <button type="button" id="image-button-single"
+                                              class="btn btn-secondary btn-block">
+                                              Download Design
+                                            </button>
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-md-6 col-lg-6 px0">
+                                          <!-- For All Color Design Download -->
+                                          <div class="d-grid gap-2">
+                                            <button type="button" id="image-button" class="btn btn-secondary btn-block">
+                                              Download As Zip
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!-- Product Details Tab Content -->
+                                    <div class="tab-pane fade" id="user_products_content" role="tabpanel"
+                                      aria-labelledby="user_product_details_tab">
+                                      <div class="mt-3 w-100">
+                                        <input type="text" class="w-100 p-2 border rounded text-center" value=""
+                                          id="mockup_product_name" placeholder="Enter Product Name Here"
+                                          style="font-size:15px; font-weight: 600; color:#777877; outline:none;">
+                                      </div>
+                                      <!-- For Users to Enter Thier Product Descriptions using Quill Editor [ Product Contents ] -->
+                                      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-3">
+                                        <div class="p-1">
+                                          <div id="editor" class="quill-editor ql-container ql-snow"
+                                            placeholder="Add descriptions here">
+                                            <div role="toolbar" class="ql-toolbar ql-snow">
+                                              <p class="pickr-description"
+                                                style="margin-right: 1px; font-size: 13px; padding-left: 5px; padding-right: 50px; color: rgb(119, 120, 119);">
+                                                Description</p>
+                                            </div>
+                                            <div class="ql-editor" contenteditable="true"
+                                              data-placeholder="Enter description here..." spellcheck="false">
+                                              <p>
+                                                <strong
+                                                  style="background-color: transparent; color: rgb(0, 0, 0);">Fabric:</strong>
+                                                <span style="background-color: transparent; color: rgb(0, 0, 0);">
+                                                  100% cotton with 180 GSM for lightweight comfort.</span>
+                                              </p>
+                                              <p>
+                                                <strong
+                                                  style="background-color: transparent; color: rgb(0, 0, 0);">Fit:</strong>
+                                                <span style="background-color: transparent; color: rgb(0, 0, 0);">
+                                                  Perfect unisex regular fit – your go-to everyday tee.
+                                                </span>
+                                              </p>
+                                              <p>
+                                                <strong
+                                                  style="background-color: transparent; color: rgb(0, 0, 0);">Care:</strong>
+                                                <span style="background-color: transparent; color: rgb(0, 0, 0);">
+                                                  Wash inside-out in cold water, dry on low heat. Flip it inside out
+                                                  before ironing.
+                                                </span>
+                                              </p>
+                                            </div>
+                                            <div class="ql-tooltip ql-hidden">
+                                              <a class="ql-preview" rel="noopener noreferrer" target="_blank"
+                                                href="about:blank"></a>
+                                              <input type="text" data-formula="e=mc^2" data-link="https://quilljs.com"
+                                                data-video="Embed URL">
+                                              <a class="ql-action"></a>
+                                              <a class="ql-remove"></a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- For Users To Enter the Product Tags -->
+                                      <div class="mt-3 w-100">
+                                        <input id="productTagInputs" type="text"
+                                          placeholder="Enter Your Product Tags Here..." class="form-control"
+                                          style="transition: border-color 0.3s;font-weight: 600; border-color: #DDDCDC;">
+                                        <div id="productTagsContainer" class="tags-container mt-2"
+                                          style="border: 1px solid #ccc; padding: 10px; min-height: 50px;"></div>
+                                      </div>
+                                    </div>
+
+                                    <!-- CSS Loaders For Display Until the product is been Saving.. -->
+                                    <div class="row mt-4 mb-3 justify-content-center loader-div d-none">
+                                      <div class="loader crate-product-loader" style="width:70px; height:13px"></div>
+                                    </div>
+                                    <!-- Place order Button For get All the Values -->
+                                    <div class="row mt-4 mb-2 justify-content-end align-items-center">
+                                      <div
+                                        class="ps-4 pe-3 col-sm-12 col-md-12 col-lg-12 col-xl-5 d-flex justify-content-center mx-xl-auto mx-xxl-auto">
+                                        <div class="d-grid gap-2 col-sm-12 col-12">
+                                          <button type="button" class="btn btn-block place_order" style="color:white"
+                                            id="place_order">
+                                            Save Product
+                                          </button>
+                                        </div>
+                                      </div>
+                                      <div class="col-auto pe-3 ">
+                                        <a href="https://products.qikink.com/products/create#" id="download_mockupss"
+                                          style="font-size: 14px; color: #f2782c; text-decoration: none;"
+                                          class="ms-auto">
+                                          <i class="fas fa-download ms-1"></i>
+                                          Download Mockups
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <!-- Load the modal view -->
+                                    <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog"
+                                      aria-labelledby="myExtraLargeModalLabel" id="myModal" aria-hidden="true">
+                                      <div class="modal-dialog modal-xl">
+                                        <div class="modal-content"
+                                          style="max-height: 100% !important; height: 100% !important; background-color:#faf3ed!important;">
+                                          <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                              aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body"
+                                            style="padding:  12px  35px !important;height: 100% !important;">
+                                            <div class="row"
+                                              style="height: 202px !important; padding-bottom: 20px !important; padding: 0px 10px;">
+                                              <div class="col-lg-12 fullHeight">
+                                                <div class="card fullHeight">
+                                                  <div class="card-body fullHeight" style="padding: 0 !important;">
+                                                    <div class="dropzone fullHeight center-al dz-clickable"
+                                                      style="background: #ff67000f !important;">
+                                                      <div class="dz-message needsclick" style="margin: 0 !important;">
+                                                        <div>
+                                                          <i class="display-4 text-muted ri-upload-cloud-2-fill"
+                                                            style="color: #FF6700 !important;"></i>
+                                                        </div>
+                                                        <h4 style="font-size: 16px !important;">
+                                                          Upload Your Design Here
+                                                        </h4>
+                                                        <h4
+                                                          style="font-size: 12px !important; color: #757575cf !important;">
+                                                          Drop files here or click to upload
+                                                        </h4>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="row">
+                                              <div
+                                                class="col-6 col-sm-6 col-md-7 col-lg-8 col-xl-8 mt-2 img-list-container"
+                                                style="padding: 0px 22px;">
+                                                <h5 style="margin: 7px 0px;">
+                                                  My Design Library
+                                                </h5>
+                                              </div>
+                                              <div class="col-6 col-sm-6 col-md-5 col-lg-4 col-xl-4 d-flex"
+                                                style="padding-right: 20px;">
+                                                <input type="text" placeholder="Search..." name="search_design"
+                                                  id="search_design" onkeypress="getSearchedValue(event)"
+                                                  style="padding-left: 30px;" class="form-control float-right">
+                                                <i class="fa fa-search search-icon d-none"></i>
+                                              </div>
+                                            </div>
+                                            <div class="col-lg-12 selimg-container fullHeight fullWidth"
+                                              id="data-simplebar" style="padding: 0px !important;"
+                                              data-simplebar="init">
+
+
+                                              <div
+                                                class="list-unstyled mb-0  d-flex fullHeight fullWidth image-container"
+                                                style="flex-wrap: wrap;padding: 8px 0px 8px 8px !important;"
+                                                id="dropzone-preview">
+                                                <div class="col-3 mt-2 img-list-container fullHeight fullWidth"
+                                                  id="dropzone-preview-list">
+                                                  <div class="border rounded fullHeight">
+                                                    <div class="d-flex p-2 fullHeight"
+                                                      style="justify-content: center; flex-direction: column; align-items: center;background: #f3f6f9;">
+                                                      <div class="flex-shrink-0">
+                                                        <div class="avatar-sm bg-light rounded fullWidth fullHeight">
+                                                        </div>
+                                                      </div>
+                                                      <div class="flex-grow-1">
+                                                        <div class="pt-1 tag-name">
+                                                          <h5 class="fs-14 mb-1 text-container"
+                                                            style="text-align: center;" data-dz-name="">&nbsp;</h5>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <div class="simplebar-wrapper" style="margin: 0px;">
+                                                <div class="simplebar-height-auto-observer-wrapper">
+                                                  <div class="simplebar-height-auto-observer"></div>
+                                                </div>
+                                                <div class="simplebar-mask">
+                                                  <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                                    <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                                      aria-label="scrollable content"
+                                                      style="height: auto; overflow: hidden scroll;">
+                                                      <div class="simplebar-content" style="padding: 0px;">
+                                                        <div
+                                                          class="list-unstyled mb-0  d-flex fullHeight fullWidth image-container"
+                                                          style="flex-wrap: wrap;padding: 8px 0px 8px 8px !important;"
+                                                          id="dropzone-preview">
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/689ab1db23f17.jpg"
+                                                                  data-res-x="150" data-width-px="1216" data-ext="1"
+                                                                  data-height-px="608" data-design-id="3925113"
+                                                                  data-width="8.11" data-height="4.05"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name"
+                                                                  title="Untitleddesign(1)" style="text-align: center;">
+                                                                  Untitleddesign(1)</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/689ab065b8857.jpg"
+                                                                  data-res-x="96" data-width-px="1920" data-ext="1"
+                                                                  data-height-px="1080" data-design-id="3925107"
+                                                                  data-width="20" data-height="11.25"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="Untitleddesign"
+                                                                  style="text-align: center;">Untitleddesign</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67deb3667e800.png"
+                                                                  data-res-x="150" data-width-px="1944" data-ext="1"
+                                                                  data-height-px="2832" data-design-id="3088847"
+                                                                  data-width="12.96" data-height="18.88"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="bghvj_12.png"
+                                                                  style="text-align: center;">bghvj_12.png</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67deb364df969.png"
+                                                                  data-res-x="150" data-width-px="2283" data-ext="1"
+                                                                  data-height-px="2148" data-design-id="3088846"
+                                                                  data-width="15.22" data-height="14.32"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="bghvj_11.png"
+                                                                  style="text-align: center;">bghvj_11.png</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67deb1ed5e0e4.png"
+                                                                  data-res-x="150" data-width-px="7680" data-ext="1"
+                                                                  data-height-px="4320" data-design-id="3088794"
+                                                                  data-width="51.2" data-height="28.8"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="bghvj_1.png"
+                                                                  style="text-align: center;">bghvj_1.png</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67deb1eb16183.png"
+                                                                  data-res-x="150" data-width-px="7680" data-ext="1"
+                                                                  data-height-px="4320" data-design-id="3088793"
+                                                                  data-width="51.2" data-height="28.8"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name"
+                                                                  title="bghvj.png_67deb1ed59abf"
+                                                                  style="text-align: center;">bghvj.png_67deb1ed59abf
+                                                                </h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67deaf3deca18.png"
+                                                                  data-res-x="150" data-width-px="7680" data-ext="1"
+                                                                  data-height-px="4320" data-design-id="3088690"
+                                                                  data-width="51.2" data-height="28.8"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="bghvj.png"
+                                                                  style="text-align: center;">bghvj.png</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67da35fbd569e.png"
+                                                                  data-res-x="72" data-width-px="303" data-ext="1"
+                                                                  data-height-px="455" data-design-id="3065550"
+                                                                  data-width="4.21" data-height="6.32"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name"
+                                                                  title="NewProject(1).png" style="text-align: center;">
+                                                                  NewProject(1).png</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67da35e40d3a1.png"
+                                                                  data-res-x="72" data-width-px="846" data-ext="1"
+                                                                  data-height-px="808" data-design-id="3065548"
+                                                                  data-width="11.75" data-height="11.22"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="Newlogo(1).png"
+                                                                  style="text-align: center;">Newlogo(1).png</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/67b00ff36d852.jpg"
+                                                                  data-res-x="150" data-width-px="296" data-ext="1"
+                                                                  data-height-px="397" data-design-id="2894433"
+                                                                  data-width="1.97" data-height="2.65"
+                                                                  data-design-type-id="3"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="billi.jpg"
+                                                                  style="text-align: center;">billi.jpg</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/1738405959.jpg"
+                                                                  data-res-x="150" data-width-px="1024" data-ext="1"
+                                                                  data-height-px="1024" data-design-id="2824274"
+                                                                  data-width="6.83" data-height="6.83"
+                                                                  data-design-type-id="1"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="magicstudioart"
+                                                                  style="text-align: center;">magicstudioart</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://sgp1.digitaloceanspaces.com/cdn.qikink.com/erp2/assets/designs/thumbs/1738405761.png"
+                                                                  data-res-x="300" data-width-px="2000" data-ext="1"
+                                                                  data-height-px="2000" data-design-id="2824258"
+                                                                  data-width="6.67" data-height="6.67"
+                                                                  data-design-type-id="1"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name"
+                                                                  title="vecteezy_aigeneratedoffroadcarillustrationfortshirtimages_38349937"
+                                                                  style="text-align: center;">
+                                                                  vecteezy_aigeneratedoffroadcarillustrationfortshirtimages_38349937
+                                                                </h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://qikink-assets.s3.ap-south-1.amazonaws.com/qikink.com/erp2/assets/designs/thumbs/1737648637.png"
+                                                                  data-res-x="72" data-width-px="617"
+                                                                  data-height-px="116" data-design-id="2774419"
+                                                                  data-width="1.61" data-height="8.57"
+                                                                  data-design-type-id="1"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name"
+                                                                  title="texttoimage(3)(1)" style="text-align: center;">
+                                                                  texttoimage(3)(1)</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://qikink-assets.s3.ap-south-1.amazonaws.com/qikink.com/erp2/assets/designs/thumbs/1737648136.png"
+                                                                  data-res-x="72" data-width-px="612"
+                                                                  data-height-px="136" data-design-id="2774334"
+                                                                  data-width="1.89" data-height="8.5"
+                                                                  data-design-type-id="1"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="texttoi"
+                                                                  style="text-align: center;">texttoi</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div
+                                                            class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 mt-2 img-list-container">
+                                                            <div class="border rounded fullHeight">
+                                                              <div class="d-flex p-2 subHeight"
+                                                                style="justify-content: center; flex-direction: column; align-items: center; background: rgb(243, 246, 249);">
+                                                                <img
+                                                                  src="https://qikink-assets.s3.ap-south-1.amazonaws.com/qikink.com/erp2/assets/designs/thumbs/1737648057.png"
+                                                                  data-res-x="150" data-width-px="705"
+                                                                  data-height-px="400" data-design-id="2774317"
+                                                                  data-width="2.67" data-height="4.7"
+                                                                  data-design-type-id="1"
+                                                                  class="bg-light rounded selected-img img-fluid">
+                                                              </div>
+                                                              <div class="pt-1 fullWidth">
+                                                                <h5 class="fs-14 mb-1 tag-name" title="texttoimage(2)"
+                                                                  style="text-align: center;">texttoimage(2)</h5>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <div class="loader-container" id="loader"
+                                                          style="display: none;">
+                                                          <main style="padding: 142px;">
+                                                            <svg class="pl" viewBox="0 0 176 160" width="176px"
+                                                              height="160px" xmlns="http://www.w3.org/2000/svg">
+                                                              <defs>
+                                                                <linearGradient id="pl-grad" x1="0" y1="0" x2="0"
+                                                                  y2="1">
+                                                                  <stop offset="0%" stop-color="hsl(33,90%,55%)"></stop>
+                                                                  <stop offset="30%" stop-color="hsl(33,90%,55%)">
+                                                                  </stop>
+                                                                  <stop offset="100%" stop-color="hsl(3,90%,55%)">
+                                                                  </stop>
+                                                                </linearGradient>
+                                                              </defs>
+                                                              <g fill="none" stroke-width="16" stroke-linecap="round">
+                                                                <circle class="pl__ring" r="56" cx="88" cy="96"
+                                                                  stroke="hsla(0,10%,10%,0.1)"></circle>
+                                                                <path class="pl__worm1" d="M144,96A56,56,0,0,1,32,96"
+                                                                  stroke="url(#pl-grad)"
+                                                                  stroke-dasharray="43.98 307.87"></path>
+                                                                <path class="pl__worm2"
+                                                                  d="M32,136V96s-.275-25.725,14-40"
+                                                                  stroke="hsl(33,90%,55%)" stroke-dasharray="0 40 0 44"
+                                                                  stroke-dashoffset="0.001" visibility="hidden"></path>
+                                                                <path class="pl__worm3"
+                                                                  d="M144,136V96s.275-25.725-14-40"
+                                                                  stroke="hsl(33,90%,55%)" stroke-dasharray="0 40 0 44"
+                                                                  stroke-dashoffset="0.001" visibility="hidden"></path>
+                                                              </g>
+                                                            </svg>
+                                                          </main>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="simplebar-placeholder" style="width: auto; height: 411px;">
+                                                </div>
+                                              </div>
+                                              <div class="simplebar-track simplebar-horizontal"
+                                                style="visibility: hidden;">
+                                                <div class="simplebar-scrollbar" style="width: 0px; display: none;">
+                                                </div>
+                                              </div>
+                                              <div class="simplebar-track simplebar-vertical"
+                                                style="visibility: visible;">
+                                                <div class="simplebar-scrollbar"
+                                                  style="height: 153px; display: block; transform: translate3d(0px, 0px, 0px);">
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="no-designs-found" id="no-designs" style="display: none;">
+                                              <img src="/assets/images/no-designs-logo.png" alt="no-desigs"
+                                                class="no-designs-logo">
+                                              <h5 style="color: #ff725e;">No Designs Found...!</h5>
+                                            </div>
+                                          </div>
+                                          <div class="modal-footer" id="mod-footer"
+                                            style="border-top: 1px solid #dfdfdf !important;height: 52px;padding: 0px 20px !important;">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="input_modal">
+                                <form id="inputForm" style="margin-bottom: 30px" class="d-none">
+                                  <div class="resettable_fields">
+                                    <input type="hidden" name="0_designid" id="0_designid" placeholder="0_designid"
+                                      value="">
+                                    <input type="hidden" name="0_width" id="0_width" placeholder="0_width" value="">
+                                    <input type="hidden" name="0_height" id="0_height" placeholder="0_height" value="">
+                                    <input type="hidden" name="0_dpi" id="0_dpi" placeholder="0_dpi" value="">
+                                    <input type="hidden" name="0_printtype" id="0_printtype" placeholder="0_print type"
+                                      value="">
+                                    <input type="hidden" name="0_placement" id="0_placement" placeholder="0_placement"
+                                      value="Front">
+                                    <input type="hidden" name="0_mockup_url" id="0_mockup_url"
+                                      placeholder="0_mockup_url" value="">
+                                    <input type="hidden" name="0_zoom_percentage" id="0_zoom_percentage"
+                                      placeholder="0_zoom_percentage" value="">
+                                    <input type="hidden" name="0_design_angle" id="0_design_angle"
+                                      placeholder="0_design_angle" value="">
+                                    <input type="hidden" name="1_designid" id="1_designid" placeholder="1_designid"
+                                      value="">
+                                    <input type="hidden" name="1_width" id="1_width" placeholder="1_width" value="">
+                                    <input type="hidden" name="1_height" id="1_height" placeholder="1_height" value="">
+                                    <input type="hidden" name="1_dpi" id="1_dpi" placeholder="1_dpi" value="">
+                                    <input type="hidden" name="1_printtype" id="1_printtype" placeholder="1_print type"
+                                      value="">
+                                    <input type="hidden" name="1_placement" id="1_placement" placeholder="1_placement"
+                                      value="Back">
+                                    <input type="hidden" name="1_mockup_url" id="1_mockup_url"
+                                      placeholder="1_mockup_url" value="">
+                                    <input type="hidden" name="1_zoom_percentage" id="1_zoom_percentage"
+                                      placeholder="1_zoom_percentage" value="">
+                                    <input type="hidden" name="1_design_angle" id="1_design_angle"
+                                      placeholder="1_design_angle" value="">
+                                    <input type="hidden" name="2_designid" id="2_designid" placeholder="2_designid"
+                                      value="">
+                                    <input type="hidden" name="2_width" id="2_width" placeholder="2_width" value="">
+                                    <input type="hidden" name="2_height" id="2_height" placeholder="2_height" value="">
+                                    <input type="hidden" name="2_dpi" id="2_dpi" placeholder="2_dpi" value="">
+                                    <input type="hidden" name="2_printtype" id="2_printtype" placeholder="2_print type"
+                                      value="">
+                                    <input type="hidden" name="2_placement" id="2_placement" placeholder="2_placement"
+                                      value="Left Pocket">
+                                    <input type="hidden" name="2_mockup_url" id="2_mockup_url"
+                                      placeholder="2_mockup_url" value="">
+                                    <input type="hidden" name="2_zoom_percentage" id="2_zoom_percentage"
+                                      placeholder="2_zoom_percentage" value="">
+                                    <input type="hidden" name="2_design_angle" id="2_design_angle"
+                                      placeholder="2_design_angle" value="">
+                                    <input type="hidden" name="3_designid" id="3_designid" placeholder="3_designid"
+                                      value="">
+                                    <input type="hidden" name="3_width" id="3_width" placeholder="3_width" value="">
+                                    <input type="hidden" name="3_height" id="3_height" placeholder="3_height" value="">
+                                    <input type="hidden" name="3_dpi" id="3_dpi" placeholder="3_dpi" value="">
+                                    <input type="hidden" name="3_printtype" id="3_printtype" placeholder="3_print type"
+                                      value="">
+                                    <input type="hidden" name="3_placement" id="3_placement" placeholder="3_placement"
+                                      value="Right Pocket">
+                                    <input type="hidden" name="3_mockup_url" id="3_mockup_url"
+                                      placeholder="3_mockup_url" value="">
+                                    <input type="hidden" name="3_zoom_percentage" id="3_zoom_percentage"
+                                      placeholder="3_zoom_percentage" value="">
+                                    <input type="hidden" name="3_design_angle" id="3_design_angle"
+                                      placeholder="3_design_angle" value="">
+                                    <input type="hidden" name="4_designid" id="4_designid" placeholder="4_designid"
+                                      value="">
+                                    <input type="hidden" name="4_width" id="4_width" placeholder="4_width" value="">
+                                    <input type="hidden" name="4_height" id="4_height" placeholder="4_height" value="">
+                                    <input type="hidden" name="4_dpi" id="4_dpi" placeholder="4_dpi" value="">
+                                    <input type="hidden" name="4_printtype" id="4_printtype" placeholder="4_print type"
+                                      value="">
+                                    <input type="hidden" name="4_placement" id="4_placement" placeholder="4_placement"
+                                      value="Left Shoulder">
+                                    <input type="hidden" name="4_mockup_url" id="4_mockup_url"
+                                      placeholder="4_mockup_url" value="">
+                                    <input type="hidden" name="4_zoom_percentage" id="4_zoom_percentage"
+                                      placeholder="4_zoom_percentage" value="">
+                                    <input type="hidden" name="4_design_angle" id="4_design_angle"
+                                      placeholder="4_design_angle" value="">
+                                    <input type="hidden" name="5_designid" id="5_designid" placeholder="5_designid"
+                                      value="">
+                                    <input type="hidden" name="5_width" id="5_width" placeholder="5_width" value="">
+                                    <input type="hidden" name="5_height" id="5_height" placeholder="5_height" value="">
+                                    <input type="hidden" name="5_dpi" id="5_dpi" placeholder="5_dpi" value="">
+                                    <input type="hidden" name="5_printtype" id="5_printtype" placeholder="5_print type"
+                                      value="">
+                                    <input type="hidden" name="5_placement" id="5_placement" placeholder="5_placement"
+                                      value="Right Shoulder">
+                                    <input type="hidden" name="5_mockup_url" id="5_mockup_url"
+                                      placeholder="5_mockup_url" value="">
+                                    <input type="hidden" name="5_zoom_percentage" id="5_zoom_percentage"
+                                      placeholder="5_zoom_percentage" value="">
+                                    <input type="hidden" name="5_design_angle" id="5_design_angle"
+                                      placeholder="5_design_angle" value="">
+                                  </div>
+                                  <input type="hidden" name="vinylPrintTypeId" id="vinylPrintTypeId" placeholder="">
+                                  <br>
+                                  <!--printing_cost_total-->
+                                  <input type="hidden" name="printing_cost_total" id="printing_cost_total"
+                                    placeholder="printing_cost_total">
+                                  <!-- For Selected Category ID -->
+                                  <input type="hidden" name="mockup_category_id" id="mockup_category_id"
+                                    placeholder="mockup_category_id">
+                                  <!-- For Create Order -->
+                                  <input type="hidden" id="mockup_name" name="mockup_name" value="">
+                                  <!-- Here We Set mockup_name for Order Purpose -->
+                                  <input type="hidden" name="mockup_generator_id" id="mockup_generator_id" value="2">
+                                  <input type="hidden" name="is_plain" id="is_plain" placeholder="Plain Order"
+                                    value="0">
+                                  <input type="hidden" name="quantity" id="quantity" placeholder="quantity" value="1">
+                                  <input type="hidden" id="defaultProductColor" name="defaultProductColor" value="1">
+                                  <!-- For Create Product  -->
+                                  <input type="hidden" id="productTags" name="productTags">
+                                  <!-- For Create Product  -->
+                                  <div class="product_descriptions" id="product_descriptions"></div>
+                                  <!-- For Create Product - Description -->
+                                  <input type="hidden" name="ord_size" id="ord_size" placeholder="size" value="1">
+                                  <!-- For Create Order -->
+                                  <input type="hidden" id="multiSelectedSizes" name="multiSelectedSizes" value="1">
+                                  <!-- For Create Product  -->
+                                  <input type="hidden" name="ord_color" id="ord_color" placeholder="color" value="1">
+                                  <!-- For Create Order -->
+                                  <input type="hidden" id="multiSelectedColors" name="multiSelectedColors" value="1">
+                                  <!-- For Create Product  -->
+                                  <input type="hidden" name="full_url" id="full_url">
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="designs_modal_div">
+              <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog"
+                aria-labelledby="myExtraLargeModalLabel" id="myModal" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                  <div class="modal-content"
+                    style="max-height: 100% !important; height: 100% !important; background-color:#faf3ed!important;">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="padding:  12px  35px !important;height: 100% !important;">
+                      <div class="row"
+                        style="height: 202px !important; padding-bottom: 20px !important; padding: 0px 10px;">
+                        <div class="col-lg-12 fullHeight">
+                          <div class="card fullHeight">
+                            <div class="card-body fullHeight" style="padding: 0 !important;">
+                              <div class="dropzone fullHeight center-al" style="background: #ff67000f !important;">
+                                <div class="fallback">
+                                  <input type="file" id="fileDesign" name="fileDesign">
+                                </div>
+                                <div class="dz-message needsclick" style="margin: 0 !important;">
+                                  <div>
+                                    <i class="display-4 text-muted ri-upload-cloud-2-fill"
+                                      style="color: #FF6700 !important;"></i>
+                                  </div>
+                                  <h4 style="font-size: 16px !important;">
+                                    Upload
+                                    Your Design Here
+                                  </h4>
+                                  <h4 style="font-size: 12px !important; color: #757575cf !important;">
+                                    Drop files here or click to upload
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-7 col-lg-8 col-xl-8 mt-2 img-list-container"
+                          style="padding: 0px 22px;">
+                          <h5 style="margin: 7px 0px;">My Design Library</h5>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-5 col-lg-4 col-xl-4 d-flex" style="padding-right: 20px;">
+                          <input type="text" placeholder="Search..." name="search_design" id="search_design"
+                            onkeypress="getSearchedValue(event)" style="padding-left: 30px;"
+                            class="form-control float-right">
+                          <i class="fa fa-search search-icon d-none"></i>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 selimg-container fullHeight fullWidth" id="data-simplebar"
+                        style="padding: 0px !important;">
+                        <div class="list-unstyled mb-0  d-flex fullHeight fullWidth image-container"
+                          style="flex-wrap: wrap;padding: 8px 0px 8px 8px !important;" id="dropzone-preview">
+                          <div class="col-3 mt-2 img-list-container fullHeight fullWidth" id="dropzone-preview-list">
+                            <div class="border rounded fullHeight">
+                              <div class="d-flex p-2 fullHeight"
+                                style="justify-content: center; flex-direction: column; align-items: center;background: #f3f6f9;">
+                                <div class="flex-shrink-0">
+                                  <div class="avatar-sm bg-light rounded fullWidth fullHeight"></div>
+                                </div>
+                                <div class="flex-grow-1">
+                                  <div class="pt-1 tag-name">
+                                    <h5 class="fs-14 mb-1 text-container" style="text-align: center;" data-dz-name="">
+                                      &nbsp;</h5>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="loader-container" id="loader">
+                          <main style="padding: 142px;">
+                            <svg class="pl" viewBox="0 0 176 160" width="176px" height="160px"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <defs>
+                                <lineargradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
+                                  <stop offset="0%" stop-color="hsl(33,90%,55%)"></stop>
+                                  <stop offset="30%" stop-color="hsl(33,90%,55%)"></stop>
+                                  <stop offset="100%" stop-color="hsl(3,90%,55%)"></stop>
+                                </lineargradient>
+                              </defs>
+                              <g fill="none" stroke-width="16" stroke-linecap="round">
+                                <circle class="pl__ring" r="56" cx="88" cy="96" stroke="hsla(0,10%,10%,0.1)"></circle>
+                                <path class="pl__worm1" d="M144,96A56,56,0,0,1,32,96" stroke="url(#pl-grad)"
+                                  stroke-dasharray="43.98 307.87"></path>
+                                <path class="pl__worm2" d="M32,136V96s-.275-25.725,14-40" stroke="hsl(33,90%,55%)"
+                                  stroke-dasharray="0 40 0 44" stroke-dashoffset="0.001" visibility="hidden"></path>
+                                <path class="pl__worm3" d="M144,136V96s.275-25.725-14-40" stroke="hsl(33,90%,55%)"
+                                  stroke-dasharray="0 40 0 44" stroke-dashoffset="0.001" visibility="hidden"></path>
+                              </g>
+                            </svg>
+                          </main>
+                        </div>
+                      </div>
+                      <div class="no-designs-found" id="no-designs">
+                        <img src="./Create Product _ Qikink_files/no-designs-logo.png" alt="no-desigs"
+                          class="no-designs-logo">
+                        <h5 style="color: #ff725e;">No Designs Found ...!</h5>
+                      </div>
+                    </div>
+                    <div class="modal-footer" id="mod-footer"
+                      style="border-top: 1px solid #dfdfdf !important;height: 52px;padding: 0px 20px !important;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="container">
+            <div id="product-container" class="product-grid"></div>
+          </div> -->
         </div>
       </div>
-    </header>
+    </div>
+  </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navigation">
-      <button class="back-button"><span class="back-icon">←</span> Back</button>
-      <div class="step-indicators">
-        <div class="step active">
-          <div class="step-icon">⊞</div>
-          <span class="step-text">Choose Collections</span>
-        </div>
-        <div class="step">
-          <div class="step-icon">👕</div>
-          <span class="step-text">Select Products</span>
-        </div>
-        <div class="step">
-          <div class="step-icon">○</div>
-          <span class="step-text">Create Product</span>
-        </div>
-      </div>
-    </nav>
+  <script type="module" src="app/index.js"></script>
+  <!-- Bootstrap JS File -->
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <!-- SPA JS File -->
+  <script src="/assets/js/spa.js"></script>
+  <!-- Add this script in your HTML header -->
+  <script src="/assets/js/jquery-1.12.4.js"></script>
+  <script src="/assets/js/moment.min.js"></script>
+  <!-- Layout config Js -->
+  <script src="/assets/js/layout.js"></script>
+  <!-- Mockup JS File -->
+  <script src="/assets/js/mockup.js"></script>
+  <!-- SweetAlert2 JS -->
+  <script src="/assets/js/sweetalert2.all.min.js"></script>
+  <!-- jQuery UI JS -->
+  <script src="/assets/js/jquery-ui.min.js"></script>
+  <!-- JSZip Min Js -->
+  <script src="/assets/js/jszip.min.js"></script>
+  <!-- Fabric Min Js -->
+  <script src="/assets/js/fabric.min.js"></script>
+  <!-- Fancy Product Designer Min Js -->
+  <script src="/assets/js/FancyProductDesigner-all.min.js"></script>
+  <!-- Simplebar Min Js -->
+  <script src="/assets/js/simplebar.min.js"></script>
+  <!-- Sweet Alert JS -->
+  <script src="/assets/js/sweetalert2@11.js"></script>
+  <!-- Dropzone JS -->
+  <script src="/assets/js/dropzone-min.js"></script>
+  <!-- Change to New Path -->
+  <script src="/assets/js/addorder-modal.js"></script>
+  <script src="/assets/js/mockup_design_calculations.js"></script>
+  <script src="/assets/js/populatePrintTypes.js"></script>
+  <script src="/assets/js/colors.js"></script>
+  <script src="/assets/js/sizes.js"></script>
+  <script src="/assets/js/price_calculation.js"></script>
+  <script src="/assets/js/resettable_fields.js"></script>
+  <script src="/assets/js/containerCalculations.js"></script>
+  <script src="/assets/js/printCost.js"></script>
+  <!-- <script src="/assets/js/productMockup.js"></script> -->
+  <script src="/assets/js/special_accessories.js"></script>
+  <script src="/assets/js/designs-modal.js"></script>
+  <script src="/assets/js/custom_test.js"></script>
+  <script src="/assets/js/design-guidelines.js"></script>
+  <script src="/assets/js/quill.js"></script>
+  <script src="/assets/js/quill.min.js"></script>
+  <script src="/assets/js/createProduct.js"></script>
+  <script src="/assets/js/pickr.min.js"></script>
+  <script src="/assets/js/form-pickers.init.js"></script>
+  <script src="/assets/js/select2.min.js"></script>
+  <script src="/assets/js/mockup_design_alignments.js"></script>
+  <script src="/assets/js/misc.js"></script>
+  <script src="/assets/js/waves.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/lord-icon-2.1.0.js"></script>
+  <script src="/assets/js/toastify-js.js"></script>
+  <script src="/assets/js/choices.min.js"></script>
+  <script src="/assets/js/flatpickr.min.js"></script>
+  <!-- apexcharts -->
+  <script src="/assets/js/form-input-spin.init.js"></script>
+  <!--Swiper slider js-->
+  <script src="/assets/js/swiper-bundle.min.js"></script>
+  <!-- App JS -->
+  <script src="/assets/js/app.js"></script>
+  <script>
+    var assets_url = "https://products.qikink.com/assets/";
+    var baseUrl = "https://products.qikink.com/";
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#back-button').removeClass('bg-white');
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <div class="container">
-        <div id="product-container" class="product-grid"></div>
-      </div>
-    </main>
+      function checkAndHideTabSwitchContainer() {
+        const sourceValue = $.trim($("#source").val());
+        const isMockupTabActive = $("#mockup_design").hasClass("show active");
+        const tabSwitchContainer = $(".tab-switch-container");
+        if (isMockupTabActive && sourceValue) {
+          tabSwitchContainer.hide();
+          $(".change-background").addClass("change-background-color");
+          $('#back-button').removeClass('bg-white');
 
-    <script type="module" src="app/index.js"></script>
-  </body>
+        } else {
+          tabSwitchContainer.show(); // Restore visibility if conditions are not met
+          $(".change-background").removeClass("change-background-color");
+        }
+      }
+      // Use event delegation to listen for tab changes dynamically
+      $(document).on("mockup_design", '', function () {
+        checkAndHideTabSwitchContainer();
+      });
+      // Initial check in case the tab is already active on page load
+      checkAndHideTabSwitchContainer();
+    });
+
+    function showToast(text, className, durations = 8000) {
+      let toastData = {};
+      // Set the latest toast instance on the window object
+      window.myToast = Toastify({
+        newWindow: true,
+        text: text,
+        gravity: 'top',
+        position: 'right',
+        className: "bg-" + className,
+        stopOnFocus: true,
+        offset: {
+          x: toastData.offset ? 50 : 0,
+          y: toastData.offset ? 10 : 0,
+        },
+        duration: durations,
+        close: toastData.close === "close",
+        style: toastData.style === "style" ? {
+          background: "linear-gradient(to right, #0AB39C, #405189)"
+        } : ""
+      });
+      window.myToast.showToast();
+      return window.myToast;
+    }
+  </script>
+  <script>
+    const client_id = "352123";
+    console.log("Client ID:", client_id);
+
+    var assets_url = "https://products.qikink.com/assets/";
+    var baseUrl = "https://products.qikink.com/";
+
+    $(document).ready(function () {
+      let allProducts = {};
+      $.getJSON(baseUrl + `/assetsroot/admin/mockups/all_products.json`, function (data) {
+        allProducts = data;
+        // Convert products to select2-compatible data
+        const select2Data = Object.keys(allProducts).map(title => ({
+          id: title,
+          text: title,
+          ...allProducts[title]
+        }));
+
+        // Initialize Select2
+        // $('#create-product-search').select2({
+        //   width: '100%',
+        //   placeholder: 'Search products...',
+        //   allowClear: true,
+        //   minimumInputLength: 3,
+        //   data: select2Data,
+        //   matcher: function (params, data) {
+        //     if ($.trim(params.term) === '') return data;
+        //     if (data.text.toLowerCase().includes(params.term.toLowerCase()))
+        //       return data;
+        //     return null;
+        //   },
+        //   templateResult: function (data) {
+        //     console.log("data ", data)
+        //     if (!data.id) return data.text;
+        //     return $(`
+        //   <div class="d-flex align-items-center" style="padding: 2px;">
+        //    <img src="${data.image_url || 'https://via.placeholder.com/40'}" 
+        //       style="width: 50px; height: 60px; object-fit: cover; border-radius: 6px; margin-right: 12px; border: 1px solid #ddd;" />
+        //     <div style="line-height: 1.2;">
+        //     <div style="font-weight: 400; font-size: 13px; color: #333;">${data.product_title}</div>
+        //     <div style="font-size: 12px; color: #333; font-weight: 400" class="pt-1">Starts from ₹${data.base_price}</div>
+        //    </div>
+        //   </div>
+        //  `);
+        //   },
+        //   templateSelection: function (data) {
+        //     return data.id ? data.text : 'Search products...';
+        //   }
+        // });
+
+        // Ensure no value is pre-selected
+        $('#create-product-search').val(null).trigger('change');
+
+        $('#go-button').on('click', function () {
+          const selectedId = $('#create-product-search')
+            .val(); // get selected product id (title)
+          if (!selectedId) {
+            showToast('Please select a product first.', 'danger', 3000);
+            return;
+          }
+          const selectedProduct = allProducts[selectedId];
+          if (selectedProduct && selectedProduct.mockup_id) {
+            editProductNew(selectedProduct.mockup_id);
+            /*
+             * For select all feature added on 15-09-2025
+             */
+            $.getJSON(baseUrl + '/assetsroot/admin/mockups/product_categories.json', function (data) {
+              let foundCategory = null;
+              data.categories.forEach(category => {
+                category.products_list.forEach(product => {
+                  if (product.prod_mockup_id.includes(selectedProduct.mockup_id)) {
+                    foundCategory = {
+                      category_id: category.category_id,
+                      category_name: category.category_name
+                    };
+                  }
+                });
+              });
+              if (foundCategory) {
+                $(".available_sizes_menu").removeClass("d-none");
+              } else {
+                $(".available_sizes_menu").addClass("d-none");
+              }
+            });
+
+            setTimeout(() => {
+              var activeTab = $('.nav-link-for-tab.active');
+              var activeTabId = activeTab.attr('id');
+              if (activeTabId == 'mockup_design_tab') {
+                $('.create-product-search-div').addClass('d-none');
+              }
+            }, 500)
+
+            // Clear selection after calling editProductNew
+            $('#create-product-search').val(null).trigger('change');
+
+          } else {
+            showToast('Mockup is not found for the selected product.', 'danger',
+              3000);
+          }
+        });
+      });
+    });
+  </script>
+  <script>
+    function showToast(text, className, durations = 5000) {
+      let toastData = {};
+
+      // Set the latest toast instance on the window object
+      window.myToast = Toastify({
+        newWindow: true,
+        text: text,
+        gravity: 'top',
+        position: 'right',
+        className: "bg-" + className,
+        stopOnFocus: true,
+        offset: {
+          x: toastData.offset ? 50 : 0,
+          y: toastData.offset ? 10 : 0,
+        },
+        duration: durations,
+        close: toastData.close === "close",
+        style: toastData.style === "style" ? {
+          background: "linear-gradient(to right, #0AB39C, #405189)"
+        } : ""
+      });
+
+      window.myToast.showToast();
+      return window.myToast;
+    }
+
+    function showLoader(content = 'Please wait.. Product is Pushed to your Store.') {
+      $('.processing-loader, .backdrops').removeClass('d-none');
+      $('#loader-text-content').html(content);
+    }
+
+    function hideLoader() {
+      $('.processing-loader, .backdrops').addClass('d-none');
+      $('#loader-text-content').html('');
+    }
+  </script>
+</body>
+
 </html>

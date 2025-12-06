@@ -1,7 +1,4 @@
-
 function getSelDesignsModal(idx = null, objData = "") {
-
-
     if (idx != null) {
         if (objData != "" && objData != null) {
             jsonData=window.mockupJsonData[0];
@@ -23,9 +20,7 @@ function getSelDesignsModal(idx = null, objData = "") {
     }
 };
 
-
 function getSelDesignsModalAfter(idx = null, objData = "") {
-
     var width = objData.width;
     var ord_width = document.getElementById(idx + "_width");
     ord_width.value = width;
@@ -37,11 +32,7 @@ function getSelDesignsModalAfter(idx = null, objData = "") {
     var img_dpi = document.getElementById("dpi").value;
     var ord_dpi = document.getElementById(idx + "_dpi");
     ord_dpi.value = img_dpi;
-
 };
-
-
-
 
 function getimgSize(val) {
     var ord_size = document.getElementById("ord_size");
@@ -51,18 +42,13 @@ function getimgSize(val) {
     }
 };
 
-
-
 function getimgColor(val,color_id) {
-
     var ord_color = document.getElementById("ord_color");
     ord_color.value = val;
 
     var ord_color = document.getElementById("ord_color");
     ord_color.value = color_id;
 };
-
-
 
 function getProductQuantity(val) {
     var quantity = document.getElementById("quantity");
@@ -71,16 +57,12 @@ function getProductQuantity(val) {
     }
 }
 
-
-
 function getPlainOrderCheck(val){
     var is_plain = document.getElementById("is_plain");
     if(is_plain){
     is_plain.value = val;
     }
 }
-
-
 
 function getPrintTypeVal(idx, val) {
      // handle vinyl printing
@@ -100,32 +82,9 @@ function getPrintTypeVal(idx, val) {
     },0);
    
     getValueAsPerPrintType(val);
-    /*
-     // below lines are optional and may work without the below lines.
-     var designObject = typeof window.design_json === 'string' ? JSON.parse(window.design_json) : window.design_json;
-     
-     if (designObject[cur_placement].hasOwnProperty("boundingBox" + idx)) {
-     boundingparams = designObject[cur_placement]["boundingBox" + idx];
-     } else {
-     boundingparams = designObject[cur_placement]["boundingBox"];
-     }
-     
-     
-     let design_obj = yourDesigner.currentViewInstance.getElementByTitle('Design');
-     if (design_obj) {
-     tParam = {"boundingBox": boundingparams};
-     yourDesigner.setElementParameters(tParam, shirt_obj);
-     }
-     */
 }
 
-
-
 function changeBoundingBoxElementsForDTF(designObject, oldBoundingBoxValues, id) {
-
-
-
-
     var keys = Object.keys(designObject);
 
     for (let i = 0; i < keys.length; i++) {
@@ -173,7 +132,6 @@ function changeBoundingBoxElementsForDTF(designObject, oldBoundingBoxValues, id)
         }
     }
 }
-
 
 // For Default Set Quantity for 1
 jQuery(document).ready(function () {

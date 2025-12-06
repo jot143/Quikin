@@ -25,11 +25,10 @@ function createProductCard(productName, product) {
 
 function displayProducts(products) {
   const container = document.getElementById("product-container");
-  container.innerHTML = ""; // Clear previous content
+  container.innerHTML = ''; // Clear previous content
 
   if (Object.keys(products).length === 0) {
-    container.innerHTML =
-      '<p style="text-align: center; color: #999; grid-column: 1 / -1;">No products found.</p>';
+    container.innerHTML ='<p style="text-align: center; color: #999; grid-column: 1 / -1;">No products found.</p>';
     return;
   }
 
@@ -39,6 +38,22 @@ function displayProducts(products) {
     container.appendChild(card);
   }
 }
+
+
+// function displayProducts(products) {
+//   const productsContainer = document.getElementById('products-container'); // Assuming 'products-container' is the ID of your target element
+  
+//   if (productsContainer) { // Check if the element was successfully found
+//     let html = '';
+//     products.forEach(product => {
+//       html += `<div>${product.name}</div>`;
+//     });
+//     productsContainer.innerHTML = html;
+//   } else {
+//     console.error('Error: Could not find the products container element with ID "products-container".');
+//   }
+// }
+
 
 function filterProducts(searchTerm) {
   if (!searchTerm.trim()) {
@@ -68,6 +83,20 @@ function filterProducts(searchTerm) {
   displayProducts(filtered);
 }
 
+// function loadProducts() {
+//   getProducts()
+//     .then((products) => {
+//       console.log(products);
+//       allProducts = products;
+//       displayProducts(products);
+//     })
+//     .catch((error) => {
+//       console.error("Error loading products:", error);
+//       const container = document.getElementById("product-container");
+//       container.innerHTML = '<p style="text-align: center; color: #999;">Failed to load products. Please try again later.</p>';
+//     });
+// }
+
 function loadProducts() {
   getProducts()
     .then((products) => {
@@ -78,10 +107,14 @@ function loadProducts() {
     .catch((error) => {
       console.error("Error loading products:", error);
       const container = document.getElementById("product-container");
-      container.innerHTML =
-        '<p style="text-align: center; color: #999;">Failed to load products. Please try again later.</p>';
+      if (container) { // Add this check
+        container.innerHTML = '<p style="text-align: center; color: #999;">Failed to load products. Please try again later.</p>';
+      } else {
+        console.error("Error: Could not find element with ID 'product-container' to display error message.");
+      }
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();

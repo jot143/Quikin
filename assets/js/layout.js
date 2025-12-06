@@ -7,9 +7,14 @@ Contact: Themesbrand@gmail.com
 File: Layout Js File
 */
 
+var baseUrl = "https://products.qikink.com/";
+var base_url = "https://products.qikink.com/";
+
 (function () {
 
     'use strict';
+
+   
 
     if (sessionStorage.getItem('defaultAttribute')) {
 

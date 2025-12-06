@@ -10,6 +10,7 @@ export async function getProducts() {
     `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(apiUrl)}`,
   ];
 
+
   // Try each proxy until one works
   for (let i = 0; i < proxies.length; i++) {
     try {

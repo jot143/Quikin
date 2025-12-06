@@ -75,7 +75,7 @@ $(document).ready(function () {
             changeTshirtColorAcc(false, sizeId, "size");
           // allow multiselect only for mobile cases
             if (!($('.rightsidecontainer').hasClass('mockup2') && ($('.mockup_name_h3').html().toLowerCase().indexOf(' case') !== -1 || $('.mockup_name_h3').html().toLowerCase().indexOf('aop') !== -1 ) )) {
-             if( window.mockup_id !== "280" && window.mockup_id!=="69" && window.mockup_id !=="124"){
+             if( window.mockup_id !== "280" && window.mockup_id!=="69"){
                 
                 $('.size-button').removeClass('selected');
                 $('#multiSelectedSizes').val(sizeId);
